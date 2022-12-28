@@ -11,6 +11,9 @@ if outdir.exists():
 Path(outdir).mkdir(exist_ok=True, parents=True)
 
 gigs = Path("data/gigs").glob("**/*.yaml")
+all_gigs = []
+
+conf = yaml.safe_load(Path("conf.yaml").read_text())
 
 for gig in gigs:
     data = yaml.safe_load(gig.read_text())
@@ -36,8 +39,10 @@ for gig in gigs:
     outpath.mkdir(exist_ok=True, parents=True)
     Path(outpath, f"{gig.stem}.json").write_text(json.dumps(ld, sort_keys=True))
 
-    # Path(outdir, f"{gig.stem}.json").write_text(json.dumps(ld, sort_keys=True))
+    url = f"{str(outpath).replace('dist', conf['api-server'])}/{gig.stem}.json"
+    all_gigs.append(url)
 
+Path("dist", "gigs.json").write_text((json.dumps(all_gigs)))
         # "offers": {
         #     "@type": "offer",
         #     "availability": "Not relevant",
