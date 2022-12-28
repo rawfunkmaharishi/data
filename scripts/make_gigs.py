@@ -27,7 +27,8 @@ for gig in gigs:
         },
     }
 
-    datestamp = f'{"-".join(str(gig).split("/")[2:5])}T{data["time"]}'
+    date = "-".join(str(gig).split("/")[2:5])
+    datestamp = f'{date}T{data["time"]}'
     ld["startDate"] = datestamp
 
     location = json.loads(Path("dist", "venues", f"{data['venue']}.json").read_text())
@@ -40,7 +41,13 @@ for gig in gigs:
     Path(outpath, f"{gig.stem}.json").write_text(json.dumps(ld, sort_keys=True))
 
     url = f"{str(outpath).replace('dist', conf['api-server'])}/{gig.stem}.json"
-    all_gigs.append(url)
+    all_gigs.append(
+        {
+            "date": date,
+            "venue": ld["location"]["name"],
+            "url": url
+            }
+        )
 
 Path("dist", "gigs.json").write_text((json.dumps(all_gigs)))
         # "offers": {
