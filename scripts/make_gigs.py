@@ -37,13 +37,16 @@ for gig in gigs:
     ld["name"] = f"Raw Funk Maharishi live at {location['name']}"
 
     outpath = Path(str(gig).replace("data", "dist")).parent
+    url = f"{str(outpath).replace('dist', conf['webserver'])}/{gig.stem}"
+    ld["sameAs"] = url
+
     outpath.mkdir(exist_ok=True, parents=True)
     Path(outpath, f"{gig.stem}.json").write_text(json.dumps(ld, sort_keys=True))
 
-    url = f"{str(outpath).replace('dist', conf['api-server'])}/{gig.stem}.json"
     all_gigs.append(ld)
 
 Path("dist", "gigs.json").write_text((json.dumps(all_gigs)))
+
 # "offers": {
 #     "@type": "offer",
 #     "availability": "Not relevant",
