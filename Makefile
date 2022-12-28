@@ -28,3 +28,6 @@ exec:
 format:
 	python -m isort .
 	python -m black .
+
+deploy:
+	curl -X POST -d {} https://api.netlify.com/build_hooks/63ac59de37c6b11675856637

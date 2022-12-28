@@ -41,19 +41,13 @@ for gig in gigs:
     Path(outpath, f"{gig.stem}.json").write_text(json.dumps(ld, sort_keys=True))
 
     url = f"{str(outpath).replace('dist', conf['api-server'])}/{gig.stem}.json"
-    all_gigs.append(
-        {
-            "date": date,
-            "venue": ld["location"]["name"],
-            "url": url
-            }
-        )
+    all_gigs.append(ld)
 
 Path("dist", "gigs.json").write_text((json.dumps(all_gigs)))
-        # "offers": {
-        #     "@type": "offer",
-        #     "availability": "Not relevant",
-        #     "price": "0",
-        #     "priceCurrency": "GBP",
-        #     "url": "//www.lunalivemusic.com/",
-        # },
+# "offers": {
+#     "@type": "offer",
+#     "availability": "Not relevant",
+#     "price": "0",
+#     "priceCurrency": "GBP",
+#     "url": "//www.lunalivemusic.com/",
+# },
