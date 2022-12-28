@@ -1,3 +1,5 @@
+import json
+from pathlib import Path
 from unittest import TestCase
 
 from lib.venue import Venue
@@ -47,3 +49,32 @@ class TestVenue(TestCase):
         }
         venue = Venue("luna.yaml")
         self.assertEqual(venue, expected)
+
+    def test_saving(self):
+        """Test it writes the data."""
+
+        venue = Venue("biddle-brothers.yaml")
+        venue.save("tmp")
+
+        actual_path = Path("tmp", "venues", "biddle-brothers.json")
+        self.assertTrue(actual_path.exists())
+
+        actual = json.loads(actual_path.read_text(encoding="utf-8"))
+        self.assertEqual(
+            actual,
+            {
+                "@context": "https://schema.org",
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "United Kingdom",
+                    "streetAddress": "88 Lower Clapton Rd,, E5 0QR",
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 51.5531359,
+                    "longitude": -0.0529881,
+                },
+                "name": "Biddle Brothers",
+            },
+        )

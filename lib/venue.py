@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import yaml
@@ -9,9 +10,8 @@ class Venue(dict):
     def __init__(self, datafile) -> None:
         """Constructor."""
 
-        self.data = yaml.safe_load(
-            Path("data", "venues", datafile).read_text(encoding="utf-8")
-        )
+        self.datafile = Path("data", "venues", datafile)
+        self.data = yaml.safe_load(Path(self.datafile).read_text(encoding="utf-8"))
 
         self["@context"] = "https://schema.org"
         self["@type"] = "Place"
@@ -29,3 +29,11 @@ class Venue(dict):
 
         if "website" in self.data:
             self["sameAs"] = self.data["website"]
+
+    def save(self, outroot="dist"):
+        """Write ourselves to a disk."""
+        venues_dir = Path(outroot, "venues")
+        venues_dir.mkdir(exist_ok=True, parents=True)
+        Path(venues_dir, f"{self.datafile.stem}.json").write_text(
+            json.dumps(self, sort_keys=True), encoding="utf-8"
+        )
