@@ -2,11 +2,17 @@ import json
 from pathlib import Path
 from unittest import TestCase
 
+from helpers import clean_house
+
 from lib.venue import Venue
 
 
 class TestVenue(TestCase):
     """Test Venue."""
+
+    def setUp(self):
+        """Pre-flight shit."""
+        clean_house()
 
     def test_simple_venue(self):
         """Test it has the correct data."""
