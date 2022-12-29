@@ -1,19 +1,11 @@
-import json
-from pathlib import Path
-
-import yaml
+from lib.entity import Entity
 
 
-class Venue(dict):
+class Venue(Entity):
     """A Venue."""
 
-    def __init__(self, datafile) -> None:
-        """Constructor."""
-
-        self.datafile = Path("data", "venues", datafile)
-        self.data = yaml.safe_load(Path(self.datafile).read_text(encoding="utf-8"))
-
-        self["@context"] = "https://schema.org"
+    def refine(self):
+        """Add our specific data."""
         self["@type"] = "Place"
         self["address"] = {
             "@type": "PostalAddress",
@@ -25,15 +17,3 @@ class Venue(dict):
             "latitude": self.data["latitude"],
             "longitude": self.data["longitude"],
         }
-        self["name"] = self.data["name"]
-
-        if "website" in self.data:
-            self["sameAs"] = self.data["website"]
-
-    def save(self, outroot="dist"):
-        """Write ourselves to a disk."""
-        venues_dir = Path(outroot, "venues")
-        venues_dir.mkdir(exist_ok=True, parents=True)
-        Path(venues_dir, f"{self.datafile.stem}.json").write_text(
-            json.dumps(self, sort_keys=True), encoding="utf-8"
-        )

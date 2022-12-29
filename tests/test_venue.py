@@ -32,7 +32,7 @@ class TestVenue(TestCase):
             "name": "New Cross Inn Hostel",
         }
 
-        venue = Venue("new-cross-inn.yaml")
+        venue = Venue("data/venues/new-cross-inn.yaml")
         self.assertEqual(venue, expected)
 
     def test_venue_with_website(self):
@@ -53,13 +53,13 @@ class TestVenue(TestCase):
             "name": "Luna Lounge",
             "sameAs": "//www.lunalivemusic.com/",
         }
-        venue = Venue("luna.yaml")
+        venue = Venue("data/venues/luna.yaml")
         self.assertEqual(venue, expected)
 
     def test_saving(self):
         """Test it writes the data."""
 
-        venue = Venue("biddle-brothers.yaml")
+        venue = Venue("data/venues/biddle-brothers.yaml")
         venue.save("tmp")
 
         actual_path = Path("tmp", "venues", "biddle-brothers.json")
