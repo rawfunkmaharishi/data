@@ -45,7 +45,7 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Luna Lounge",
             "sameAs": "https://rawfunkmaharishi.uk/gigs/2022/12/15/luna",
-            "off-schema": {"name-bits": ["2022", "12", "15", "luna"]},
+            "offSchema": {"nameBits": ["2022", "12", "15", "luna"]},
         }
 
         gig = Gig("data/gigs/2022-12-15-luna.yaml")
@@ -94,7 +94,7 @@ class TestGig(TestCase):
                     "sameAs": "https://hotvox.co.uk/artists/dirty-palace",
                 },
             ],
-            "off-schema": {"name-bits": ["2017", "08", "14", "hoxton-underbelly"]},
+            "offSchema": {"nameBits": ["2017", "08", "14", "hoxton-underbelly"]},
         }
 
         gig = Gig("data/gigs/2017-08-14-hoxton-underbelly.yaml")
@@ -134,7 +134,7 @@ class TestGig(TestCase):
                 "name": "Raw Funk Maharishi",
                 "sameAs": "https://rawfunkmaharishi.uk/",
             },
-            "off-schema": {"name-bits": ["2015", "08", "11", "hoxton-underbelly"]},
+            "offSchema": {"nameBits": ["2015", "08", "11", "hoxton-underbelly"]},
         }
 
         gig = Gig("data/gigs/2015-08-11-hoxton-underbelly.yaml")
@@ -175,7 +175,7 @@ class TestGig(TestCase):
                 "sameAs": "https://rawfunkmaharishi.uk/",
             },
             "offers": {"@type": "offer", "price": 6, "priceCurrency": "GBP"},
-            "off-schema": {"name-bits": ["2016", "09", "04", "the-islington"]},
+            "offSchema": {"nameBits": ["2016", "09", "04", "the-islington"]},
         }
 
         gig = Gig("data/gigs/2016-09-04-the-islington.yaml")
@@ -220,7 +220,7 @@ class TestGig(TestCase):
                 "sameAs": "https://rawfunkmaharishi.uk/",
             },
             "offers": {"@type": "offer", "price": 3, "priceCurrency": "GBP"},
-            "off-schema": {"name-bits": ["2017", "08", "18", "new-cross-inn"]},
+            "offSchema": {"nameBits": ["2017", "08", "18", "new-cross-inn"]},
         }
 
         gig = Gig("data/gigs/2017-08-18-new-cross-inn.yaml")

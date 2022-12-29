@@ -57,7 +57,7 @@ class Gig(Entity):
                 "priceCurrency": "GBP",
             }
 
-        self["off-schema"] = {"name-bits": self.id_bits}
+        self["offSchema"] = {"nameBits": self.id_bits}
 
     @property
     def datestamp(self):
