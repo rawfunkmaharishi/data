@@ -61,4 +61,4 @@ exec:
 		bash
 
 deploy:
-	curl -X POST -d {} https://api.netlify.com/build_hooks/63ac59de37c6b11675856637
+	curl -X POST -d {} https://api.netlify.com/build_hooks/63adc43ebe17be06775d0d7e
