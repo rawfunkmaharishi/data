@@ -21,8 +21,6 @@ class Entity(dict):
         """Populate ourself."""
         self["@context"] = "https://schema.org"
 
-        self["name"] = self.data["name"]
-
         if "website" in self.data:
             self["sameAs"] = self.data["website"]
 

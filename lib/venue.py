@@ -17,3 +17,4 @@ class Venue(Entity):
             "latitude": self.data["latitude"],
             "longitude": self.data["longitude"],
         }
+        self["name"] = self.data["name"]
