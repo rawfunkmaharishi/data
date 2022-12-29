@@ -45,6 +45,13 @@ class Gig(Entity):
         else:
             self["performer"] = rfm
 
+        if "price" in self.data:
+            self["offers"] = {
+                "@type": "offer",
+                "price": self.data["price"],
+                "priceCurrency": "GBP",
+            }
+
     @property
     def datestamp(self):
         """Extract the datestamp."""

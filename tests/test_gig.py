@@ -136,3 +136,43 @@ class TestGig(TestCase):
 
         gig = Gig("data/gigs/2015-08-11-hoxton-underbelly.yaml")
         self.assertEqual(gig, expected)
+
+    def test_with_price(self):
+        """Test it shows ticket prices."""
+        # we need this to exist
+        venue = Venue("data/venues/the-islington.yaml")
+        venue.save()
+
+        expected = {
+            "@context": "https://schema.org",
+            "@type": "MusicEvent",
+            "startDate": "2016-09-04T20:30",
+            "location": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "United Kingdom",
+                    "streetAddress": "1 Tolpuddle St, N1 0XT",
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 51.53442,
+                    "longitude": -0.10872,
+                },
+                "name": "The Islington",
+            },
+            "name": "Raw Funk Maharishi live at The Islington",
+            "sameAs": [
+                "https://rawfunkmaharishi.uk/gigs/2016/09/04/the/islington",
+                "https://facebook.com/events/1771443439734606/",
+            ],
+            "performer": {
+                "@type": "MusicGroup",
+                "name": "Raw Funk Maharishi",
+                "sameAs": "//rawfunkmaharishi.uk/",
+            },
+            "offers": {"@type": "offer", "price": 6, "priceCurrency": "GBP"},
+        }
+
+        gig = Gig("data/gigs/2016-09-04-the-islington.yaml")
+        self.assertEqual(gig, expected)
