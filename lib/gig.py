@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from lib.entity import Entity
+from lib.performer import Performer
 
 
 class Gig(Entity):
@@ -10,12 +11,6 @@ class Gig(Entity):
     def refine(self):
         """Add our specific data."""
         self["@type"] = "MusicEvent"
-        self["performer"] = {
-            "@type": "MusicGroup",
-            "name": "Raw Funk Maharishi",
-            "sameAs": "//rawfunkmaharishi.uk/",
-        }
-
         self["startDate"] = self.datestamp
 
         location = json.loads(
@@ -28,6 +23,19 @@ class Gig(Entity):
         self["name"] = f"Raw Funk Maharishi live at {location['name']}"
 
         self["sameAs"] = f"https://rawfunkmaharishi.uk/gigs/{'/'.join(self.id_bits)}"
+
+        us = Performer(
+            {
+                "name": "Raw Funk Maharishi",
+                "website": "//rawfunkmaharishi.uk/",
+            }
+        )
+
+        if "other_bands" in self.data:
+            self["performer"] = [us] + list(map(Performer, self.data["other_bands"]))
+
+        else:
+            self["performer"] = us
 
     @property
     def datestamp(self):
