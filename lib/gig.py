@@ -22,9 +22,17 @@ class Gig(Entity):
         self["location"] = location
         self["name"] = f"Raw Funk Maharishi live at {location['name']}"
 
-        self["sameAs"] = f"https://rawfunkmaharishi.uk/gigs/{'/'.join(self.id_bits)}"
+        event_url = f"https://rawfunkmaharishi.uk/gigs/{'/'.join(self.id_bits)}"
+        if "facebook_id" in self.data:
+            self["sameAs"] = [
+                event_url,
+                f"https://facebook.com/events/{self.data['facebook_id']}/",
+            ]
 
-        us = Performer(
+        else:
+            self["sameAs"] = event_url
+
+        rfm = Performer(
             {
                 "name": "Raw Funk Maharishi",
                 "website": "//rawfunkmaharishi.uk/",
@@ -32,10 +40,10 @@ class Gig(Entity):
         )
 
         if "other_bands" in self.data:
-            self["performer"] = [us] + list(map(Performer, self.data["other_bands"]))
+            self["performer"] = [rfm] + list(map(Performer, self.data["other_bands"]))
 
         else:
-            self["performer"] = us
+            self["performer"] = rfm
 
     @property
     def datestamp(self):

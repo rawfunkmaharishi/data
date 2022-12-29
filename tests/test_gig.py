@@ -98,31 +98,41 @@ class TestGig(TestCase):
         gig = Gig("data/gigs/2017-08-14-hoxton-underbelly.yaml")
         self.assertEqual(gig, expected)
 
-    # def test_saving(self):
-    #     """Test it writes the data."""
+    def test_with_fb_event(self):
+        """Test it includes the FB Event URL."""
+        # we need this to exist
+        venue = Venue("data/venues/hoxton-underbelly.yaml")
+        venue.save()
 
-    #     venue = Venue("data/venues/biddle-brothers.yaml")
-    #     venue.save("tmp")
+        expected = {
+            "@context": "https://schema.org",
+            "@type": "MusicEvent",
+            "startDate": "2015-08-11T21:15",
+            "location": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "United Kingdom",
+                    "streetAddress": "11 Hoxton Square, N1 6NU",
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 51.527817,
+                    "longitude": -0.08171,
+                },
+                "name": "Zigfrid von Underbelly",
+            },
+            "name": "Raw Funk Maharishi live at Zigfrid von Underbelly",
+            "sameAs": [
+                "https://rawfunkmaharishi.uk/gigs/2015/08/11/hoxton/underbelly",
+                "https://facebook.com/events/674266616008095/",
+            ],
+            "performer": {
+                "@type": "MusicGroup",
+                "name": "Raw Funk Maharishi",
+                "sameAs": "//rawfunkmaharishi.uk/",
+            },
+        }
 
-    #     actual_path = Path("tmp", "venues", "biddle-brothers.json")
-    #     self.assertTrue(actual_path.exists())
-
-    #     actual = json.loads(actual_path.read_text(encoding="utf-8"))
-    #     self.assertEqual(
-    #         actual,
-    #         {
-    #             "@context": "https://schema.org",
-    #             "@type": "Place",
-    #             "address": {
-    #                 "@type": "PostalAddress",
-    #                 "addressCountry": "United Kingdom",
-    #                 "streetAddress": "88 Lower Clapton Rd,, E5 0QR",
-    #             },
-    #             "geo": {
-    #                 "@type": "GeoCoordinates",
-    #                 "latitude": 51.5531359,
-    #                 "longitude": -0.0529881,
-    #             },
-    #             "name": "Biddle Brothers",
-    #         },
-    #     )
+        gig = Gig("data/gigs/2015-08-11-hoxton-underbelly.yaml")
+        self.assertEqual(gig, expected)
