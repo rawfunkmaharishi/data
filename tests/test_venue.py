@@ -51,7 +51,7 @@ class TestVenue(TestCase):
                 "longitude": 0.0101648,
             },
             "name": "Luna Lounge",
-            "sameAs": "//www.lunalivemusic.com/",
+            "sameAs": "https://www.lunalivemusic.com/",
         }
         venue = Venue("data/venues/luna.yaml")
         self.assertEqual(venue, expected)

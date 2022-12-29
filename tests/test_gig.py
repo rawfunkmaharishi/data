@@ -25,7 +25,7 @@ class TestGig(TestCase):
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
-                "sameAs": "//rawfunkmaharishi.uk/",
+                "sameAs": "https://rawfunkmaharishi.uk/",
             },
             "startDate": "2022-12-15T21:00",
             "location": {
@@ -41,7 +41,7 @@ class TestGig(TestCase):
                     "longitude": 0.0101648,
                 },
                 "name": "Luna Lounge",
-                "sameAs": "//www.lunalivemusic.com/",
+                "sameAs": "https://www.lunalivemusic.com/",
             },
             "name": "Raw Funk Maharishi live at Luna Lounge",
             "sameAs": "https://rawfunkmaharishi.uk/gigs/2022/12/15/luna",
@@ -80,17 +80,17 @@ class TestGig(TestCase):
                 {
                     "@type": "MusicGroup",
                     "name": "Raw Funk Maharishi",
-                    "sameAs": "//rawfunkmaharishi.uk/",
+                    "sameAs": "https://rawfunkmaharishi.uk/",
                 },
                 {
                     "@type": "MusicGroup",
                     "name": "The Curious Incident",
-                    "sameAs": "//www.thecuriousincident.com/",
+                    "sameAs": "https://www.thecuriousincident.com/",
                 },
                 {
                     "@type": "MusicGroup",
                     "name": "Dirty Palace",
-                    "sameAs": "//hotvox.co.uk/artists/dirty-palace",
+                    "sameAs": "https://hotvox.co.uk/artists/dirty-palace",
                 },
             ],
         }
@@ -130,7 +130,7 @@ class TestGig(TestCase):
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
-                "sameAs": "//rawfunkmaharishi.uk/",
+                "sameAs": "https://rawfunkmaharishi.uk/",
             },
         }
 
@@ -169,7 +169,7 @@ class TestGig(TestCase):
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
-                "sameAs": "//rawfunkmaharishi.uk/",
+                "sameAs": "https://rawfunkmaharishi.uk/",
             },
             "offers": {"@type": "offer", "price": 6, "priceCurrency": "GBP"},
         }
@@ -189,7 +189,7 @@ class TestGig(TestCase):
                 "https://rawfunkmaharishi.uk/gigs/2017/08/18/new/cross/inn",
                 "https://facebook.com/events/466457933711377/",
                 (
-                    "//www.newcrossinn.com/event/"
+                    "https://www.newcrossinn.com/event/"
                     "friday-funk-project-with-london-beat-club-more/"
                 ),
             ],
@@ -213,7 +213,7 @@ class TestGig(TestCase):
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
-                "sameAs": "//rawfunkmaharishi.uk/",
+                "sameAs": "https://rawfunkmaharishi.uk/",
             },
             "offers": {"@type": "offer", "price": 3, "priceCurrency": "GBP"},
         }

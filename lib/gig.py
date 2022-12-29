@@ -39,7 +39,7 @@ class Gig(Entity):
             Performer(
                 {
                     "name": "Raw Funk Maharishi",
-                    "website": "//rawfunkmaharishi.uk/",
+                    "website": "https://rawfunkmaharishi.uk/",
                 }
             )
         ]
