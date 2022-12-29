@@ -176,3 +176,47 @@ class TestGig(TestCase):
 
         gig = Gig("data/gigs/2016-09-04-the-islington.yaml")
         self.assertEqual(gig, expected)
+
+    def test_with_additional_website(self):
+        """Test it generates more sameAs."""
+        # we need this to exist
+        venue = Venue("data/venues/new-cross-inn.yaml")
+        venue.save()
+
+        expected = {
+            "@context": "https://schema.org",
+            "sameAs": [
+                "https://rawfunkmaharishi.uk/gigs/2017/08/18/new/cross/inn",
+                "https://facebook.com/events/466457933711377/",
+                (
+                    "//www.newcrossinn.com/event/"
+                    "friday-funk-project-with-london-beat-club-more/"
+                ),
+            ],
+            "@type": "MusicEvent",
+            "startDate": "2017-08-18T20:00",
+            "location": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "United Kingdom",
+                    "streetAddress": "323A New Cross Rd, SE14",
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 51.475746,
+                    "longitude": -0.03733,
+                },
+                "name": "New Cross Inn Hostel",
+            },
+            "name": "Raw Funk Maharishi live at New Cross Inn Hostel",
+            "performer": {
+                "@type": "MusicGroup",
+                "name": "Raw Funk Maharishi",
+                "sameAs": "//rawfunkmaharishi.uk/",
+            },
+            "offers": {"@type": "offer", "price": 3, "priceCurrency": "GBP"},
+        }
+
+        gig = Gig("data/gigs/2017-08-18-new-cross-inn.yaml")
+        self.assertEqual(gig, expected)

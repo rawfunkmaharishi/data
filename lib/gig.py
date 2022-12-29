@@ -22,28 +22,33 @@ class Gig(Entity):
         self["location"] = location
         self["name"] = f"Raw Funk Maharishi live at {location['name']}"
 
-        event_url = f"https://rawfunkmaharishi.uk/gigs/{'/'.join(self.id_bits)}"
+        self["sameAs"] = [f"https://rawfunkmaharishi.uk/gigs/{'/'.join(self.id_bits)}"]
+
         if "facebook_id" in self.data:
-            self["sameAs"] = [
-                event_url,
-                f"https://facebook.com/events/{self.data['facebook_id']}/",
-            ]
+            self["sameAs"].append(
+                f"https://facebook.com/events/{self.data['facebook_id']}/"
+            )
 
-        else:
-            self["sameAs"] = event_url
+        if "website" in self.data:
+            self["sameAs"].append(self.data["website"])
 
-        rfm = Performer(
-            {
-                "name": "Raw Funk Maharishi",
-                "website": "//rawfunkmaharishi.uk/",
-            }
-        )
+        if len(self["sameAs"]) == 1:
+            self["sameAs"] = self["sameAs"][0]
+
+        self["performer"] = [
+            Performer(
+                {
+                    "name": "Raw Funk Maharishi",
+                    "website": "//rawfunkmaharishi.uk/",
+                }
+            )
+        ]
 
         if "other_bands" in self.data:
-            self["performer"] = [rfm] + list(map(Performer, self.data["other_bands"]))
+            self["performer"] += list(map(Performer, self.data["other_bands"]))
 
-        else:
-            self["performer"] = rfm
+        if len(self["performer"]) == 1:
+            self["performer"] = self["performer"][0]
 
         if "price" in self.data:
             self["offers"] = {
