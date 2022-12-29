@@ -26,10 +26,13 @@ test:  ## run the tests
 
 clean:  ## clean up artefacts
 	@rm -fr .pytest_cache
-	@rm -fr __pycache__
+	@rm -fr $$(find . -name __pycache__)
 
 install:  ## install dependencies
 	python -m pip install -r requirements.txt
+
+generate:
+	python generator.py
 
 ###
 
