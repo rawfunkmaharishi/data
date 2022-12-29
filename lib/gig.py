@@ -16,7 +16,7 @@ class Gig(Entity):
             "sameAs": "//rawfunkmaharishi.uk/",
         }
 
-        self["startDate"] = "2022-12-15T21:00"
+        self["startDate"] = self.datestamp
 
         location = json.loads(
             Path("dist", "venues", f"{self.data['venue']}.json").read_text(
@@ -27,4 +27,15 @@ class Gig(Entity):
         self["location"] = location
         self["name"] = f"Raw Funk Maharishi live at {location['name']}"
 
-        self["sameAs"] = "https://rawfunkmaharishi.uk/gigs/2022/12/15/luna"
+        self["sameAs"] = f"https://rawfunkmaharishi.uk/gigs/{'/'.join(self.id_bits)}"
+
+    @property
+    def datestamp(self):
+        """Extract the datestamp."""
+        date = "-".join(self.id_bits[:3])
+        return f"{date}T{self.data['time']}"
+
+    @property
+    def id_bits(self):
+        """Pull out the bits from the filename."""
+        return self.datafile.stem.split("-")
