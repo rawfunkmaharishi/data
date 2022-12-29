@@ -57,6 +57,8 @@ class Gig(Entity):
                 "priceCurrency": "GBP",
             }
 
+        self["off-schema"] = {"name-bits": self.id_bits}
+
     @property
     def datestamp(self):
         """Extract the datestamp."""
@@ -66,4 +68,5 @@ class Gig(Entity):
     @property
     def id_bits(self):
         """Pull out the bits from the filename."""
-        return self.datafile.stem.split("-")
+        bits = self.datafile.stem.split("-")
+        return [bits[0]] + [bits[1]] + [bits[2]] + ["-".join(bits[3:])]

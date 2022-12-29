@@ -45,6 +45,7 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Luna Lounge",
             "sameAs": "https://rawfunkmaharishi.uk/gigs/2022/12/15/luna",
+            "off-schema": {"name-bits": ["2022", "12", "15", "luna"]},
         }
 
         gig = Gig("data/gigs/2022-12-15-luna.yaml")
@@ -75,7 +76,7 @@ class TestGig(TestCase):
                 "name": "Zigfrid von Underbelly",
             },
             "name": "Raw Funk Maharishi live at Zigfrid von Underbelly",
-            "sameAs": "https://rawfunkmaharishi.uk/gigs/2017/08/14/hoxton/underbelly",
+            "sameAs": "https://rawfunkmaharishi.uk/gigs/2017/08/14/hoxton-underbelly",
             "performer": [
                 {
                     "@type": "MusicGroup",
@@ -93,6 +94,7 @@ class TestGig(TestCase):
                     "sameAs": "https://hotvox.co.uk/artists/dirty-palace",
                 },
             ],
+            "off-schema": {"name-bits": ["2017", "08", "14", "hoxton-underbelly"]},
         }
 
         gig = Gig("data/gigs/2017-08-14-hoxton-underbelly.yaml")
@@ -124,7 +126,7 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Zigfrid von Underbelly",
             "sameAs": [
-                "https://rawfunkmaharishi.uk/gigs/2015/08/11/hoxton/underbelly",
+                "https://rawfunkmaharishi.uk/gigs/2015/08/11/hoxton-underbelly",
                 "https://facebook.com/events/674266616008095/",
             ],
             "performer": {
@@ -132,6 +134,7 @@ class TestGig(TestCase):
                 "name": "Raw Funk Maharishi",
                 "sameAs": "https://rawfunkmaharishi.uk/",
             },
+            "off-schema": {"name-bits": ["2015", "08", "11", "hoxton-underbelly"]},
         }
 
         gig = Gig("data/gigs/2015-08-11-hoxton-underbelly.yaml")
@@ -163,7 +166,7 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at The Islington",
             "sameAs": [
-                "https://rawfunkmaharishi.uk/gigs/2016/09/04/the/islington",
+                "https://rawfunkmaharishi.uk/gigs/2016/09/04/the-islington",
                 "https://facebook.com/events/1771443439734606/",
             ],
             "performer": {
@@ -172,6 +175,7 @@ class TestGig(TestCase):
                 "sameAs": "https://rawfunkmaharishi.uk/",
             },
             "offers": {"@type": "offer", "price": 6, "priceCurrency": "GBP"},
+            "off-schema": {"name-bits": ["2016", "09", "04", "the-islington"]},
         }
 
         gig = Gig("data/gigs/2016-09-04-the-islington.yaml")
@@ -186,7 +190,7 @@ class TestGig(TestCase):
         expected = {
             "@context": "https://schema.org",
             "sameAs": [
-                "https://rawfunkmaharishi.uk/gigs/2017/08/18/new/cross/inn",
+                "https://rawfunkmaharishi.uk/gigs/2017/08/18/new-cross-inn",
                 "https://facebook.com/events/466457933711377/",
                 (
                     "https://www.newcrossinn.com/event/"
@@ -216,6 +220,7 @@ class TestGig(TestCase):
                 "sameAs": "https://rawfunkmaharishi.uk/",
             },
             "offers": {"@type": "offer", "price": 3, "priceCurrency": "GBP"},
+            "off-schema": {"name-bits": ["2017", "08", "18", "new-cross-inn"]},
         }
 
         gig = Gig("data/gigs/2017-08-18-new-cross-inn.yaml")
