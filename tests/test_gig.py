@@ -134,7 +134,10 @@ class TestGig(TestCase):
                 "name": "Raw Funk Maharishi",
                 "sameAs": "https://rawfunkmaharishi.uk/",
             },
-            "offSchema": {"nameBits": ["2015", "08", "11", "hoxton-underbelly"]},
+            "offSchema": {
+                "nameBits": ["2015", "08", "11", "hoxton-underbelly"],
+                "hasMoreInfo": True,
+            },
         }
 
         gig = Gig("data/gigs/2015-08-11-hoxton-underbelly.yaml")
@@ -175,7 +178,10 @@ class TestGig(TestCase):
                 "sameAs": "https://rawfunkmaharishi.uk/",
             },
             "offers": {"@type": "offer", "price": 6, "priceCurrency": "GBP"},
-            "offSchema": {"nameBits": ["2016", "09", "04", "the-islington"]},
+            "offSchema": {
+                "nameBits": ["2016", "09", "04", "the-islington"],
+                "hasMoreInfo": True,
+            },
         }
 
         gig = Gig("data/gigs/2016-09-04-the-islington.yaml")
@@ -220,7 +226,10 @@ class TestGig(TestCase):
                 "sameAs": "https://rawfunkmaharishi.uk/",
             },
             "offers": {"@type": "offer", "price": 3, "priceCurrency": "GBP"},
-            "offSchema": {"nameBits": ["2017", "08", "18", "new-cross-inn"]},
+            "offSchema": {
+                "nameBits": ["2017", "08", "18", "new-cross-inn"],
+                "hasMoreInfo": True,
+            },
         }
 
         gig = Gig("data/gigs/2017-08-18-new-cross-inn.yaml")

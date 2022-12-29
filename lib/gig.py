@@ -58,6 +58,8 @@ class Gig(Entity):
             }
 
         self["offSchema"] = {"nameBits": self.id_bits}
+        if isinstance(self["sameAs"], list):
+            self["offSchema"]["hasMoreInfo"] = True
 
     @property
     def datestamp(self):
