@@ -27,7 +27,7 @@ class TestMusicAlbum(TestCase):
                 "sameAs": "https://waxrecordingstudio.info/",
             },
             "genre": "Industrial Jazz",
-            "image": "https://rawfunkmaharishi.uk/assets/album-covers/flux.jpg",
+            "image": "https://rawfunkmaharishi.uk/album-covers/flux.jpg",
             "numTracks": 7,
             "track": [
                 {"@type": "MusicRecording", "name": "Boot"},
