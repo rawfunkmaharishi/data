@@ -48,6 +48,11 @@ class TestGig(TestCase):
             "recordedIn": {
                 "@type": "VideoObject",
                 "@id": "https://www.youtube.com/watch?v=JYP6eA5yqc4",
+                "name": "Raw Funk Maharishi live at Luna Lounge",
+                "description": "Raw Funk Maharishi live at Luna Lounge",
+                "uploadDate": "2022-12-15T21:00",
+                "thumbnailUrl": "https://img.youtube.com/vi/JYP6eA5yqc4/default.jpg",
+                "embedUrl": "https://www.youtube.com/embed/JYP6eA5yqc4",
             },
             "offSchema": {"nameBits": ["2022", "12", "15", "luna"]},
         }
