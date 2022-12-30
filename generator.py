@@ -33,6 +33,7 @@ def make_gigs():
 def make_records():
     """Make the `MusicAlbums` data."""
     records = list(map(MusicAlbum, Path("data/records").glob("**/*.yaml")))
+    records.sort(key=lambda x: x["datePublished"])
     Path("dist/records.json").write_text(json.dumps(records), encoding="utf-8")
 
 
