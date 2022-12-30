@@ -17,7 +17,7 @@ class MusicAlbum(Entity):
         }
         self["genre"] = "Industrial Jazz"
         self["image"] = (
-            "https://rawfunkmaharishi.uk/album-covers/" f"{self.data['cover_image']}"
+            "https://rawfunkmaharishi.uk/record-covers/" f"{self.data['cover_image']}"
         )
         self["numTracks"] = len(self.data["tracks"])
         self["track"] = list(
