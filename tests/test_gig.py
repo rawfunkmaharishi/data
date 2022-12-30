@@ -22,11 +22,6 @@ class TestGig(TestCase):
         expected = {
             "@context": "https://schema.org",
             "@type": "MusicEvent",
-            "performer": {
-                "@type": "MusicGroup",
-                "name": "Raw Funk Maharishi",
-                "sameAs": "https://rawfunkmaharishi.uk/",
-            },
             "startDate": "2022-12-15T21:00",
             "location": {
                 "@type": "Place",
@@ -45,6 +40,15 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Luna Lounge",
             "sameAs": "https://rawfunkmaharishi.uk/gigs/2022/12/15/luna",
+            "performer": {
+                "@type": "MusicGroup",
+                "name": "Raw Funk Maharishi",
+                "sameAs": "https://rawfunkmaharishi.uk/",
+            },
+            "recordedIn": {
+                "@type": "VideoObject",
+                "@id": "https://www.youtube.com/watch?v=JYP6eA5yqc4",
+            },
             "offSchema": {"nameBits": ["2022", "12", "15", "luna"]},
         }
 

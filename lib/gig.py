@@ -57,6 +57,12 @@ class Gig(Entity):
                 "priceCurrency": "GBP",
             }
 
+        if "youtube_id" in self.data:
+            self["recordedIn"] = {
+                "@type": "VideoObject",
+                "@id": f"https://www.youtube.com/watch?v={self.data['youtube_id']}",
+            }
+
         self["offSchema"] = {"nameBits": self.id_bits}
         if isinstance(self["sameAs"], list):
             self["offSchema"]["hasMoreInfo"] = True
