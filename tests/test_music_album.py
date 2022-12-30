@@ -39,6 +39,8 @@ class TestMusicAlbum(TestCase):
                 {"@type": "MusicRecording", "name": "Fade Zero"},
             ],
             "offSchema": {
+                "id": "flux",
+                "imageStem": "flux.jpg",
                 "YouTubeURL": (
                     "https://www.youtube.com/embed/videoseries?"
                     "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
@@ -61,7 +63,7 @@ class TestMusicAlbum(TestCase):
                 ],
             },
             "sameAs": [
-                "https://rawfunkmaharishi.uk/records/data/records/flux.yaml",
+                "https://rawfunkmaharishi.uk/records/flux",
                 (
                     "https://www.youtube.com/embed/videoseries?"
                     "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"

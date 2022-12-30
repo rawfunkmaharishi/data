@@ -9,8 +9,8 @@ class Entity(dict):
 
     def __init__(self, datafile):
         """Constructor."""
-        self.identifier = datafile
         self.datafile = Path(datafile)
+        self.identifier = self.datafile.stem
         self.load_data()
         self.populate()
 

@@ -25,6 +25,8 @@ class MusicAlbum(Entity):
         )
 
         self["offSchema"] = {}
+        self["offSchema"]["id"] = self.identifier
+        self["offSchema"]["imageStem"] = self.data["cover_image"]
         self["offSchema"][
             "YouTubeURL"
         ] = f"https://www.youtube.com/embed/videoseries?list={self.data['youtube_id']}"
