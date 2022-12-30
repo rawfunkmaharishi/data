@@ -63,6 +63,12 @@ class Gig(Entity):
                 "@id": f"https://www.youtube.com/watch?v={self.data['youtube_id']}",
             }
 
+        if "promoter" in self.data:
+            self["organizer"] = {
+                "@type": "Organization",
+                "name": self.data["promoter"],
+            }
+
         self["offSchema"] = {"nameBits": self.id_bits}
         if isinstance(self["sameAs"], list):
             self["offSchema"]["hasMoreInfo"] = True

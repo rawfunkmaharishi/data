@@ -238,3 +238,61 @@ class TestGig(TestCase):
 
         gig = Gig("data/gigs/2017-08-18-new-cross-inn.yaml")
         self.assertEqual(gig, expected)
+
+    def test_with_promoter(self):
+        """Test a gig with a `promoter`."""
+        # we need this to exist
+        venue = Venue("data/venues/biddle-brothers.yaml")
+        venue.save()
+
+        expected = {
+            "@context": "https://schema.org",
+            "@type": "MusicEvent",
+            "startDate": "2019-10-24T21:20",
+            "location": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "United Kingdom",
+                    "streetAddress": "88 Lower Clapton Rd,, E5 0QR",
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 51.5531359,
+                    "longitude": -0.0529881,
+                },
+                "name": "Biddle Brothers",
+            },
+            "name": "Raw Funk Maharishi live at Biddle Brothers",
+            "sameAs": [
+                "https://rawfunkmaharishi.uk/gigs/2019/10/24/sad-house-daddy",
+                "https://facebook.com/events/577151796358191/",
+            ],
+            "performer": [
+                {
+                    "@type": "MusicGroup",
+                    "name": "Raw Funk Maharishi",
+                    "sameAs": "https://rawfunkmaharishi.uk/",
+                },
+                {
+                    "@type": "MusicGroup",
+                    "name": "JJT Duo",
+                    "sameAs": (
+                        "https://www.youtube.com/channel/UCPjiLQ-VzffhilciNow1QWQ"
+                    ),
+                },
+                {
+                    "@type": "MusicGroup",
+                    "name": "Portacle",
+                    "sameAs": "https://portacle.bandcamp.com/",
+                },
+            ],
+            "organizer": {"@type": "Organization", "name": "Sad House Daddy"},
+            "offSchema": {
+                "nameBits": ["2019", "10", "24", "sad-house-daddy"],
+                "hasMoreInfo": True,
+            },
+        }
+
+        gig = Gig("data/gigs/2019-10-24-sad-house-daddy.yaml")
+        self.assertEqual(gig, expected)
