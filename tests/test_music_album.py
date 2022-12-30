@@ -40,7 +40,7 @@ class TestMusicAlbum(TestCase):
             ],
             "offSchema": {
                 "id": "flux",
-                "imageStem": "flux.jpg",
+                "image": "flux.jpg",
                 "YouTubeURL": (
                     "https://www.youtube.com/embed/videoseries?"
                     "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
