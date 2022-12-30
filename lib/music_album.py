@@ -36,7 +36,7 @@ class MusicAlbum(Entity):
         )
 
         self["sameAs"] = [
-            f"https://rawfunkmaharishi.uk/albums/{self.identifier}",
+            f"https://rawfunkmaharishi.uk/records/{self.identifier}",
             self["offSchema"]["YouTubeURL"],
             self["offSchema"]["SpotifyURL"],
         ]

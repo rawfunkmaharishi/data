@@ -61,7 +61,7 @@ class TestMusicAlbum(TestCase):
                 ],
             },
             "sameAs": [
-                "https://rawfunkmaharishi.uk/albums/data/records/flux.yaml",
+                "https://rawfunkmaharishi.uk/records/data/records/flux.yaml",
                 (
                     "https://www.youtube.com/embed/videoseries?"
                     "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
