@@ -63,7 +63,7 @@ class Gig(Entity):
                 "@id": f"https://www.youtube.com/watch?v={self.data['youtube_id']}",
                 "name": self["name"],
                 "description": self["name"],
-                "uploadDate": self["startDate"],
+                "uploadDate": "-".join(self.id_bits[:3]),
                 "thumbnailUrl": (
                     f"https://img.youtube.com/vi/{self.data['youtube_id']}/default.jpg"
                 ),
