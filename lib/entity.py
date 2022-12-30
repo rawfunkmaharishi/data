@@ -9,6 +9,7 @@ class Entity(dict):
 
     def __init__(self, datafile):
         """Constructor."""
+        self.identifier = datafile
         self.datafile = Path(datafile)
         self.load_data()
         self.populate()
@@ -20,7 +21,6 @@ class Entity(dict):
     def populate(self):
         """Populate ourself."""
         self["@context"] = "https://schema.org"
-
         if "website" in self.data:
             self["sameAs"] = self.data["website"]
 

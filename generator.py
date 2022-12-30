@@ -3,6 +3,7 @@ import shutil
 from pathlib import Path
 
 from lib.gig import Gig
+from lib.music_album import MusicAlbum
 from lib.venue import Venue
 
 
@@ -29,7 +30,15 @@ def make_gigs():
     Path("dist/gigs.json").write_text(json.dumps(gigs), encoding="utf-8")
 
 
+def make_records():
+    """Make the `MusicAlbums` data."""
+    records = list(map(MusicAlbum, Path("data/records").glob("**/*.yaml")))
+    Path("dist/records.json").write_text(json.dumps(records), encoding="utf-8")
+
+
+# this could use some tests tbh
 if __name__ == "__main__":
     make_dirs()
     make_venues()
     make_gigs()
+    make_records()
