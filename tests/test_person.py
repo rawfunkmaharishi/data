@@ -18,6 +18,7 @@ class TestPerson(TestCase):
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Sam",
+            "knowsAbout": "Drums",
             "image": {
                 "@type": "ImageObject",
                 "contentUrl": "/the-band/sam.png",

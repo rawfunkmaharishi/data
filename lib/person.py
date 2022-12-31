@@ -9,6 +9,7 @@ class Person(Entity):
 
         self["@type"] = "Person"
         self["name"] = self.data["name"]
+        self["knowsAbout"] = self.data["instrument"]
         self["image"] = {
             "@type": "ImageObject",
             "contentUrl": f"/the-band/{self.data['image']}",
