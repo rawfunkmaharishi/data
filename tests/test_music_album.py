@@ -27,7 +27,13 @@ class TestMusicAlbum(TestCase):
                 "sameAs": "https://waxrecordingstudio.info/",
             },
             "genre": "Industrial Jazz",
-            "image": "https://rawfunkmaharishi.uk/record-covers/flux.jpg",
+            "image": (
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/record-covers/{self.data['cover_image']}",
+                    "name": "Flux cover",
+                },
+            ),
             "numTracks": 7,
             "track": [
                 {"@type": "MusicRecording", "name": "Boot"},
@@ -40,13 +46,12 @@ class TestMusicAlbum(TestCase):
             ],
             "offSchema": {
                 "id": "flux",
-                "image": "flux.jpg",
                 "YouTubeURL": (
-                    "https://www.youtube.com/embed/videoseries?"
-                    "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
+                    "https://www.youtube.com/embed/videoseries"
+                    "?list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
                 ),
                 "SpotifyURL": (
-                    "https://open.spotify.com/embed/album/0V93nqs6M6JNtHE0OJvvgY"
+                    "https://open.spotify.com/embed/" "album/0V93nqs6M6JNtHE0OJvvgY"
                 ),
                 "otherOutlets": [
                     {

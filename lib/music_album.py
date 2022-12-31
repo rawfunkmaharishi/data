@@ -16,9 +16,15 @@ class MusicAlbum(Entity):
             "sameAs": self.data["location"]["url"],
         }
         self["genre"] = "Industrial Jazz"
-        self[
-            "image"
-        ] = f"https://rawfunkmaharishi.uk/record-covers/{self.data['cover_image']}"
+
+        self["image"] = (
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/record-covers/{self.data['cover_image']}",
+                "name": f"{self.data['title']} cover",
+            },
+        )
+
         self["numTracks"] = len(self.data["tracks"])
         self["track"] = list(
             map(lambda x: {"@type": "MusicRecording", "name": x}, self.data["tracks"])
@@ -26,7 +32,6 @@ class MusicAlbum(Entity):
 
         self["offSchema"] = {}
         self["offSchema"]["id"] = self.identifier
-        self["offSchema"]["image"] = self.data["cover_image"]
         self["offSchema"][
             "YouTubeURL"
         ] = f"https://www.youtube.com/embed/videoseries?list={self.data['youtube_id']}"

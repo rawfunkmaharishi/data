@@ -9,7 +9,8 @@ class Person(Entity):
 
         self["@type"] = "Person"
         self["name"] = self.data["name"]
-        self["image"] = f"https://rawfunkmaharishi.uk/the-band/{self.data['image']}"
-
-        self["offSchema"] = {}
-        self["offSchema"]["image"] = self.data["image"]
+        self["image"] = {
+            "@type": "ImageObject",
+            "contentUrl": f"/the-band/{self.data['image']}",
+            "name": self["name"],
+        }

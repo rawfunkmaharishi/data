@@ -18,9 +18,12 @@ class TestPerson(TestCase):
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Sam",
-            "image": "https://rawfunkmaharishi.uk/the-band/sam.png",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/the-band/sam.png",
+                "name": "Sam",
+            },
             "sameAs": "https://sam.pikesley.org",
-            "offSchema": {"image": "sam.png"},
         }
 
         person = Person("data/people/sam.yaml")
