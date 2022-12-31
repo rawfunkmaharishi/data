@@ -28,13 +28,11 @@ class TestMusicAlbum(TestCase):
                 "sameAs": "https://waxrecordingstudio.info/",
             },
             "genre": "Industrial Jazz",
-            "image": (
-                {
-                    "@type": "ImageObject",
-                    "contentUrl": "/record-covers/flux.jpg",
-                    "name": "Flux cover",
-                },
-            ),
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/record-covers/flux.jpg",
+                "name": "Flux cover",
+            },
             "numTracks": 7,
             "track": [
                 {"@type": "MusicRecording", "name": "Boot"},

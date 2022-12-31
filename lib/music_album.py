@@ -18,13 +18,11 @@ class MusicAlbum(Entity):
         }
         self["genre"] = "Industrial Jazz"
 
-        self["image"] = (
-            {
-                "@type": "ImageObject",
-                "contentUrl": f"/record-covers/{self.data['cover_image']}",
-                "name": f"{self.data['title']} cover",
-            },
-        )
+        self["image"] = {
+            "@type": "ImageObject",
+            "contentUrl": f"/record-covers/{self.data['cover_image']}",
+            "name": f"{self.data['title']} cover",
+        }
 
         self["numTracks"] = len(self.data["tracks"])
         self["track"] = list(
