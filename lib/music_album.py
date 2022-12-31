@@ -10,6 +10,7 @@ class MusicAlbum(Entity):
         self["byArtist"] = {"@type": "MusicGroup", "name": "Raw Funk Maharishi"}
         self["datePublished"] = str(self.data["release_date"])
         self["albumReleaseType"] = self.data["type"]
+        self["url"] = "/records/{self.identifier}"
         self["locationCreated"] = {
             "@type": "Place",
             "name": self.data["location"]["name"],
@@ -43,7 +44,7 @@ class MusicAlbum(Entity):
         )
 
         self["sameAs"] = [
-            f"https://rawfunkmaharishi.uk/records/{self.identifier}",
+            f"https://rawfunkmaharishi.uk/{self['url']}",
             self["offSchema"]["YouTubeURL"],
             self["offSchema"]["SpotifyURL"],
         ]

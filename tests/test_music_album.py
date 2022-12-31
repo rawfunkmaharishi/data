@@ -21,6 +21,7 @@ class TestMusicAlbum(TestCase):
             "byArtist": {"@type": "MusicGroup", "name": "Raw Funk Maharishi"},
             "datePublished": "2018-04-28",
             "albumReleaseType": "EP",
+            "url": "/records/{self.identifier}",
             "locationCreated": {
                 "@type": "Place",
                 "name": "Wax Studios",
@@ -47,11 +48,11 @@ class TestMusicAlbum(TestCase):
             "offSchema": {
                 "id": "flux",
                 "YouTubeURL": (
-                    "https://www.youtube.com/embed/videoseries"
-                    "?list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
+                    "https://www.youtube.com/embed/videoseries?"
+                    "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
                 ),
                 "SpotifyURL": (
-                    "https://open.spotify.com/embed/" "album/0V93nqs6M6JNtHE0OJvvgY"
+                    "https://open.spotify.com/embed/album/" "0V93nqs6M6JNtHE0OJvvgY"
                 ),
                 "otherOutlets": [
                     {
@@ -68,10 +69,10 @@ class TestMusicAlbum(TestCase):
                 ],
             },
             "sameAs": [
-                "https://rawfunkmaharishi.uk/records/flux",
+                "https://rawfunkmaharishi.uk//records/{self.identifier}",
                 (
-                    "https://www.youtube.com/embed/videoseries?"
-                    "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
+                    "https://www.youtube.com/embed/videoseries"
+                    "?list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
                 ),
                 "https://open.spotify.com/embed/album/0V93nqs6M6JNtHE0OJvvgY",
                 "https://music.apple.com/us/album/flux/1372617971",
