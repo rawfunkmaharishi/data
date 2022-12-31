@@ -21,7 +21,7 @@ class MusicAlbum(Entity):
         self["image"] = (
             {
                 "@type": "ImageObject",
-                "contentUrl": "/record-covers/{self.data['cover_image']}",
+                "contentUrl": f"/record-covers/{self.data['cover_image']}",
                 "name": f"{self.data['title']} cover",
             },
         )

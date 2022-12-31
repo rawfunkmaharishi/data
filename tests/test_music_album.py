@@ -31,7 +31,7 @@ class TestMusicAlbum(TestCase):
             "image": (
                 {
                     "@type": "ImageObject",
-                    "contentUrl": "/record-covers/{self.data['cover_image']}",
+                    "contentUrl": "/record-covers/flux.jpg",
                     "name": "Flux cover",
                 },
             ),
@@ -52,7 +52,7 @@ class TestMusicAlbum(TestCase):
                     "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
                 ),
                 "SpotifyURL": (
-                    "https://open.spotify.com/embed/album/" "0V93nqs6M6JNtHE0OJvvgY"
+                    "https://open.spotify.com/embed/album/0V93nqs6M6JNtHE0OJvvgY"
                 ),
                 "otherOutlets": [
                     {
