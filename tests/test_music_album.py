@@ -21,7 +21,7 @@ class TestMusicAlbum(TestCase):
             "byArtist": {"@type": "MusicGroup", "name": "Raw Funk Maharishi"},
             "datePublished": "2018-04-28",
             "albumReleaseType": "EP",
-            "url": "/records/{self.identifier}",
+            "url": "/records/flux",
             "locationCreated": {
                 "@type": "Place",
                 "name": "Wax Studios",
@@ -69,7 +69,7 @@ class TestMusicAlbum(TestCase):
                 ],
             },
             "sameAs": [
-                "https://rawfunkmaharishi.uk//records/{self.identifier}",
+                "https://rawfunkmaharishi.uk//records/flux",
                 (
                     "https://www.youtube.com/embed/videoseries"
                     "?list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
