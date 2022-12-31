@@ -16,9 +16,9 @@ class MusicAlbum(Entity):
             "sameAs": self.data["location"]["url"],
         }
         self["genre"] = "Industrial Jazz"
-        self["image"] = (
-            "https://rawfunkmaharishi.uk/record-covers/" f"{self.data['cover_image']}"
-        )
+        self[
+            "image"
+        ] = f"https://rawfunkmaharishi.uk/record-covers/{self.data['cover_image']}"
         self["numTracks"] = len(self.data["tracks"])
         self["track"] = list(
             map(lambda x: {"@type": "MusicRecording", "name": x}, self.data["tracks"])
