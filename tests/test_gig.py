@@ -39,6 +39,7 @@ class TestGig(TestCase):
                 "sameAs": "https://www.lunalivemusic.com/",
             },
             "name": "Raw Funk Maharishi live at Luna Lounge",
+            "url": "/gigs/2022/12/15/luna",
             "sameAs": "https://rawfunkmaharishi.uk/gigs/2022/12/15/luna",
             "performer": {
                 "@type": "MusicGroup",
@@ -54,7 +55,6 @@ class TestGig(TestCase):
                 "thumbnailUrl": "https://img.youtube.com/vi/JYP6eA5yqc4/default.jpg",
                 "embedUrl": "https://www.youtube.com/embed/JYP6eA5yqc4",
             },
-            "offSchema": {"nameBits": ["2022", "12", "15", "luna"]},
         }
 
         gig = Gig("data/gigs/2022-12-15-luna.yaml")
@@ -85,6 +85,7 @@ class TestGig(TestCase):
                 "name": "Zigfrid von Underbelly",
             },
             "name": "Raw Funk Maharishi live at Zigfrid von Underbelly",
+            "url": "/gigs/2017/08/14/hoxton-underbelly",
             "sameAs": "https://rawfunkmaharishi.uk/gigs/2017/08/14/hoxton-underbelly",
             "performer": [
                 {
@@ -103,7 +104,6 @@ class TestGig(TestCase):
                     "sameAs": "https://hotvox.co.uk/artists/dirty-palace",
                 },
             ],
-            "offSchema": {"nameBits": ["2017", "08", "14", "hoxton-underbelly"]},
         }
 
         gig = Gig("data/gigs/2017-08-14-hoxton-underbelly.yaml")
@@ -134,6 +134,7 @@ class TestGig(TestCase):
                 "name": "Zigfrid von Underbelly",
             },
             "name": "Raw Funk Maharishi live at Zigfrid von Underbelly",
+            "url": "/gigs/2015/08/11/hoxton-underbelly",
             "sameAs": [
                 "https://rawfunkmaharishi.uk/gigs/2015/08/11/hoxton-underbelly",
                 "https://facebook.com/events/674266616008095/",
@@ -142,10 +143,6 @@ class TestGig(TestCase):
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
                 "sameAs": "https://rawfunkmaharishi.uk/",
-            },
-            "offSchema": {
-                "nameBits": ["2015", "08", "11", "hoxton-underbelly"],
-                "hasMoreInfo": True,
             },
         }
 
@@ -177,6 +174,7 @@ class TestGig(TestCase):
                 "name": "The Islington",
             },
             "name": "Raw Funk Maharishi live at The Islington",
+            "url": "/gigs/2016/09/04/the-islington",
             "sameAs": [
                 "https://rawfunkmaharishi.uk/gigs/2016/09/04/the-islington",
                 "https://facebook.com/events/1771443439734606/",
@@ -187,10 +185,6 @@ class TestGig(TestCase):
                 "sameAs": "https://rawfunkmaharishi.uk/",
             },
             "offers": {"@type": "offer", "price": 6, "priceCurrency": "GBP"},
-            "offSchema": {
-                "nameBits": ["2016", "09", "04", "the-islington"],
-                "hasMoreInfo": True,
-            },
         }
 
         gig = Gig("data/gigs/2016-09-04-the-islington.yaml")
@@ -229,16 +223,13 @@ class TestGig(TestCase):
                 "name": "New Cross Inn Hostel",
             },
             "name": "Raw Funk Maharishi live at New Cross Inn Hostel",
+            "url": "/gigs/2017/08/18/new-cross-inn",
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
                 "sameAs": "https://rawfunkmaharishi.uk/",
             },
             "offers": {"@type": "offer", "price": 3, "priceCurrency": "GBP"},
-            "offSchema": {
-                "nameBits": ["2017", "08", "18", "new-cross-inn"],
-                "hasMoreInfo": True,
-            },
         }
 
         gig = Gig("data/gigs/2017-08-18-new-cross-inn.yaml")
@@ -269,6 +260,7 @@ class TestGig(TestCase):
                 "name": "Biddle Brothers",
             },
             "name": "Raw Funk Maharishi live at Biddle Brothers",
+            "url": "/gigs/2019/10/24/sad-house-daddy",
             "sameAs": [
                 "https://rawfunkmaharishi.uk/gigs/2019/10/24/sad-house-daddy",
                 "https://facebook.com/events/577151796358191/",
@@ -293,10 +285,6 @@ class TestGig(TestCase):
                 },
             ],
             "organizer": {"@type": "Organization", "name": "Sad House Daddy"},
-            "offSchema": {
-                "nameBits": ["2019", "10", "24", "sad-house-daddy"],
-                "hasMoreInfo": True,
-            },
         }
 
         gig = Gig("data/gigs/2019-10-24-sad-house-daddy.yaml")

@@ -21,8 +21,9 @@ class Gig(Entity):
         del location["@context"]
         self["location"] = location
         self["name"] = f"Raw Funk Maharishi live at {location['name']}"
+        self["url"] = f"/gigs/{'/'.join(self.id_bits)}"
 
-        self["sameAs"] = [f"https://rawfunkmaharishi.uk/gigs/{'/'.join(self.id_bits)}"]
+        self["sameAs"] = [f"https://rawfunkmaharishi.uk{self['url']}"]
 
         if "facebook_id" in self.data:
             self["sameAs"].append(
@@ -75,10 +76,6 @@ class Gig(Entity):
                 "@type": "Organization",
                 "name": self.data["promoter"],
             }
-
-        self["offSchema"] = {"nameBits": self.id_bits}
-        if isinstance(self["sameAs"], list):
-            self["offSchema"]["hasMoreInfo"] = True
 
     @property
     def datestamp(self):
