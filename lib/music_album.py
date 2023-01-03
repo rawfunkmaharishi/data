@@ -7,6 +7,7 @@ class MusicAlbum(Entity):
     def refine(self):
         self["@type"] = "MusicAlbum"
         self["name"] = self.data["title"]
+        self["identifier"] = self.identifier
         self["byArtist"] = {"@type": "MusicGroup", "name": "Raw Funk Maharishi"}
         self["datePublished"] = str(self.data["release_date"])
         self["albumReleaseType"] = self.data["type"]
@@ -30,7 +31,6 @@ class MusicAlbum(Entity):
         )
 
         self["offSchema"] = {}
-        self["offSchema"]["id"] = self.identifier
         self["offSchema"][
             "YouTubeURL"
         ] = f"https://www.youtube.com/embed/videoseries?list={self.data['youtube_id']}"

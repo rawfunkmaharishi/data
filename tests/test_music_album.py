@@ -17,6 +17,7 @@ class TestMusicAlbum(TestCase):
         expected = {
             "@context": "https://schema.org",
             "@type": "MusicAlbum",
+            "identifier": "flux",
             "name": "Flux",
             "byArtist": {"@type": "MusicGroup", "name": "Raw Funk Maharishi"},
             "datePublished": "2018-04-28",
@@ -44,7 +45,6 @@ class TestMusicAlbum(TestCase):
                 {"@type": "MusicRecording", "name": "Fade Zero"},
             ],
             "offSchema": {
-                "id": "flux",
                 "YouTubeURL": (
                     "https://www.youtube.com/embed/videoseries?"
                     "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
