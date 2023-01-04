@@ -30,22 +30,8 @@ class MusicAlbum(Entity):
             map(lambda x: {"@type": "MusicRecording", "name": x}, self.data["tracks"])
         )
 
-        self["offSchema"] = {}
-        self["offSchema"][
-            "YouTubeURL"
-        ] = f"https://www.youtube.com/embed/videoseries?list={self.data['youtube_id']}"
-        self["offSchema"][
-            "SpotifyURL"
-        ] = f"https://open.spotify.com/embed/album/{self.data['spotify_id']}"
-        self["offSchema"]["otherOutlets"] = list(
-            map(lambda x: {"name": x["name"], "url": x["url"]}, self.data["outlets"])
-        )
-
         self["sameAs"] = [
-            f"https://rawfunkmaharishi.uk/{self['url']}",
-            self["offSchema"]["YouTubeURL"],
-            self["offSchema"]["SpotifyURL"],
-        ]
-        self["sameAs"] += list(
-            map(lambda x: x["url"], self["offSchema"]["otherOutlets"])
-        )
+            f"https://rawfunkmaharishi.uk{self['url']}",
+            f"https://www.youtube.com/embed/videoseries?list={self.data['youtube_id']}",
+            f"https://open.spotify.com/embed/album/{self.data['spotify_id']}",
+        ] + list(map(lambda x: x["url"], self.data["outlets"]))

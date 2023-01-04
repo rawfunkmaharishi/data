@@ -44,30 +44,8 @@ class TestMusicAlbum(TestCase):
                 {"@type": "MusicRecording", "name": "Ceramic Dragon"},
                 {"@type": "MusicRecording", "name": "Fade Zero"},
             ],
-            "offSchema": {
-                "YouTubeURL": (
-                    "https://www.youtube.com/embed/videoseries?"
-                    "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
-                ),
-                "SpotifyURL": (
-                    "https://open.spotify.com/embed/album/0V93nqs6M6JNtHE0OJvvgY"
-                ),
-                "otherOutlets": [
-                    {
-                        "name": "apple music",
-                        "url": "https://music.apple.com/us/album/flux/1372617971",
-                    },
-                    {
-                        "name": "amazon",
-                        "url": (
-                            "https://www.amazon.co.uk/"
-                            "Flux-Raw-Funk-Maharishi/dp/B07CG3PG84/"
-                        ),
-                    },
-                ],
-            },
             "sameAs": [
-                "https://rawfunkmaharishi.uk//records/flux",
+                "https://rawfunkmaharishi.uk/records/flux",
                 (
                     "https://www.youtube.com/embed/videoseries"
                     "?list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
