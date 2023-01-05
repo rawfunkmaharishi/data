@@ -15,7 +15,7 @@ class MusicAlbum(Entity):
         self["locationCreated"] = {
             "@type": "Place",
             "name": self.data["location"]["name"],
-            "sameAs": self.data["location"]["url"],
+            "url": self.data["location"]["url"],
         }
         self["genre"] = "Industrial Jazz"
 
@@ -31,7 +31,6 @@ class MusicAlbum(Entity):
         )
 
         self["sameAs"] = [
-            f"https://rawfunkmaharishi.uk{self['url']}",
             f"https://www.youtube.com/embed/videoseries?list={self.data['youtube_id']}",
             f"https://open.spotify.com/embed/album/{self.data['spotify_id']}",
         ] + list(map(lambda x: x["url"], self.data["outlets"]))

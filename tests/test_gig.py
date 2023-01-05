@@ -2,8 +2,8 @@ from unittest import TestCase
 
 from helpers import clean_house
 
+from generator import make_venues
 from lib.gig import Gig
-from lib.venue import Venue
 
 
 class TestGig(TestCase):
@@ -12,13 +12,10 @@ class TestGig(TestCase):
     def setUp(self):
         """Pre-flight shit."""
         clean_house()
+        make_venues()
 
     def test_simple_gig(self):
         """Test it has the correct data."""
-        # we need this to exist
-        venue = Venue("data/venues/luna.yaml")
-        venue.save()
-
         expected = {
             "@context": "https://schema.org",
             "@type": "MusicEvent",
@@ -36,15 +33,47 @@ class TestGig(TestCase):
                     "longitude": 0.0101648,
                 },
                 "name": "Luna Lounge",
-                "sameAs": "https://www.lunalivemusic.com/",
+                "url": "https://www.lunalivemusic.com/",
             },
             "name": "Raw Funk Maharishi live at Luna Lounge",
             "url": "/gigs/2022/12/15/luna",
-            "sameAs": "https://rawfunkmaharishi.uk/gigs/2022/12/15/luna",
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
-                "sameAs": "https://rawfunkmaharishi.uk/",
+                "url": "https://rawfunkmaharishi.uk/",
+                "member": [
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/joe.png",
+                            "name": "Joe",
+                        },
+                        "knowsAbout": "Guitar",
+                        "name": "Joe",
+                    },
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/matt.png",
+                            "name": "Matt",
+                        },
+                        "knowsAbout": "Bass",
+                        "name": "Matt",
+                    },
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/sam.png",
+                            "name": "Sam",
+                        },
+                        "knowsAbout": "Drums",
+                        "name": "Sam",
+                        "url": "https://sam.pikesley.org",
+                    },
+                ],
             },
             "recordedIn": {
                 "@type": "VideoObject",
@@ -62,10 +91,6 @@ class TestGig(TestCase):
 
     def test_gig_with_other_bands(self):
         """Test a gig with `other_bands`."""
-        # we need this to exist
-        venue = Venue("data/venues/hoxton-underbelly.yaml")
-        venue.save()
-
         expected = {
             "@context": "https://schema.org",
             "@type": "MusicEvent",
@@ -86,22 +111,54 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Zigfrid von Underbelly",
             "url": "/gigs/2017/08/14/hoxton-underbelly",
-            "sameAs": "https://rawfunkmaharishi.uk/gigs/2017/08/14/hoxton-underbelly",
             "performer": [
                 {
                     "@type": "MusicGroup",
                     "name": "Raw Funk Maharishi",
-                    "sameAs": "https://rawfunkmaharishi.uk/",
+                    "url": "https://rawfunkmaharishi.uk/",
+                    "member": [
+                        {
+                            "@type": "Person",
+                            "image": {
+                                "@type": "ImageObject",
+                                "contentUrl": "/the-band/joe.png",
+                                "name": "Joe",
+                            },
+                            "knowsAbout": "Guitar",
+                            "name": "Joe",
+                        },
+                        {
+                            "@type": "Person",
+                            "image": {
+                                "@type": "ImageObject",
+                                "contentUrl": "/the-band/matt.png",
+                                "name": "Matt",
+                            },
+                            "knowsAbout": "Bass",
+                            "name": "Matt",
+                        },
+                        {
+                            "@type": "Person",
+                            "image": {
+                                "@type": "ImageObject",
+                                "contentUrl": "/the-band/sam.png",
+                                "name": "Sam",
+                            },
+                            "knowsAbout": "Drums",
+                            "name": "Sam",
+                            "url": "https://sam.pikesley.org",
+                        },
+                    ],
                 },
                 {
                     "@type": "MusicGroup",
                     "name": "The Curious Incident",
-                    "sameAs": "https://www.thecuriousincident.com/",
+                    "url": "https://www.thecuriousincident.com/",
                 },
                 {
                     "@type": "MusicGroup",
                     "name": "Dirty Palace",
-                    "sameAs": "https://hotvox.co.uk/artists/dirty-palace",
+                    "url": "https://hotvox.co.uk/artists/dirty-palace",
                 },
             ],
         }
@@ -111,10 +168,6 @@ class TestGig(TestCase):
 
     def test_with_fb_event(self):
         """Test it includes the FB Event URL."""
-        # we need this to exist
-        venue = Venue("data/venues/hoxton-underbelly.yaml")
-        venue.save()
-
         expected = {
             "@context": "https://schema.org",
             "@type": "MusicEvent",
@@ -136,13 +189,45 @@ class TestGig(TestCase):
             "name": "Raw Funk Maharishi live at Zigfrid von Underbelly",
             "url": "/gigs/2015/08/11/hoxton-underbelly",
             "sameAs": [
-                "https://rawfunkmaharishi.uk/gigs/2015/08/11/hoxton-underbelly",
                 "https://facebook.com/events/674266616008095/",
             ],
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
-                "sameAs": "https://rawfunkmaharishi.uk/",
+                "url": "https://rawfunkmaharishi.uk/",
+                "member": [
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/joe.png",
+                            "name": "Joe",
+                        },
+                        "knowsAbout": "Guitar",
+                        "name": "Joe",
+                    },
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/matt.png",
+                            "name": "Matt",
+                        },
+                        "knowsAbout": "Bass",
+                        "name": "Matt",
+                    },
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/sam.png",
+                            "name": "Sam",
+                        },
+                        "knowsAbout": "Drums",
+                        "name": "Sam",
+                        "url": "https://sam.pikesley.org",
+                    },
+                ],
             },
         }
 
@@ -151,10 +236,6 @@ class TestGig(TestCase):
 
     def test_with_price(self):
         """Test it shows ticket prices."""
-        # we need this to exist
-        venue = Venue("data/venues/the-islington.yaml")
-        venue.save()
-
         expected = {
             "@context": "https://schema.org",
             "@type": "MusicEvent",
@@ -176,13 +257,45 @@ class TestGig(TestCase):
             "name": "Raw Funk Maharishi live at The Islington",
             "url": "/gigs/2016/09/04/the-islington",
             "sameAs": [
-                "https://rawfunkmaharishi.uk/gigs/2016/09/04/the-islington",
                 "https://facebook.com/events/1771443439734606/",
             ],
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
-                "sameAs": "https://rawfunkmaharishi.uk/",
+                "url": "https://rawfunkmaharishi.uk/",
+                "member": [
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/joe.png",
+                            "name": "Joe",
+                        },
+                        "knowsAbout": "Guitar",
+                        "name": "Joe",
+                    },
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/matt.png",
+                            "name": "Matt",
+                        },
+                        "knowsAbout": "Bass",
+                        "name": "Matt",
+                    },
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/sam.png",
+                            "name": "Sam",
+                        },
+                        "knowsAbout": "Drums",
+                        "name": "Sam",
+                        "url": "https://sam.pikesley.org",
+                    },
+                ],
             },
             "offers": {"@type": "offer", "price": 6, "priceCurrency": "GBP"},
         }
@@ -192,14 +305,9 @@ class TestGig(TestCase):
 
     def test_with_additional_website(self):
         """Test it generates more sameAs."""
-        # we need this to exist
-        venue = Venue("data/venues/new-cross-inn.yaml")
-        venue.save()
-
         expected = {
             "@context": "https://schema.org",
             "sameAs": [
-                "https://rawfunkmaharishi.uk/gigs/2017/08/18/new-cross-inn",
                 "https://facebook.com/events/466457933711377/",
                 (
                     "https://www.newcrossinn.com/event/"
@@ -227,7 +335,40 @@ class TestGig(TestCase):
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
-                "sameAs": "https://rawfunkmaharishi.uk/",
+                "url": "https://rawfunkmaharishi.uk/",
+                "member": [
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/joe.png",
+                            "name": "Joe",
+                        },
+                        "knowsAbout": "Guitar",
+                        "name": "Joe",
+                    },
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/matt.png",
+                            "name": "Matt",
+                        },
+                        "knowsAbout": "Bass",
+                        "name": "Matt",
+                    },
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/sam.png",
+                            "name": "Sam",
+                        },
+                        "knowsAbout": "Drums",
+                        "name": "Sam",
+                        "url": "https://sam.pikesley.org",
+                    },
+                ],
             },
             "offers": {"@type": "offer", "price": 3, "priceCurrency": "GBP"},
         }
@@ -237,10 +378,6 @@ class TestGig(TestCase):
 
     def test_with_promoter(self):
         """Test a gig with a `promoter`."""
-        # we need this to exist
-        venue = Venue("data/venues/biddle-brothers.yaml")
-        venue.save()
-
         expected = {
             "@context": "https://schema.org",
             "@type": "MusicEvent",
@@ -262,26 +399,56 @@ class TestGig(TestCase):
             "name": "Raw Funk Maharishi live at Biddle Brothers",
             "url": "/gigs/2019/10/24/sad-house-daddy",
             "sameAs": [
-                "https://rawfunkmaharishi.uk/gigs/2019/10/24/sad-house-daddy",
                 "https://facebook.com/events/577151796358191/",
             ],
             "performer": [
                 {
                     "@type": "MusicGroup",
                     "name": "Raw Funk Maharishi",
-                    "sameAs": "https://rawfunkmaharishi.uk/",
+                    "url": "https://rawfunkmaharishi.uk/",
+                    "member": [
+                        {
+                            "@type": "Person",
+                            "image": {
+                                "@type": "ImageObject",
+                                "contentUrl": "/the-band/joe.png",
+                                "name": "Joe",
+                            },
+                            "knowsAbout": "Guitar",
+                            "name": "Joe",
+                        },
+                        {
+                            "@type": "Person",
+                            "image": {
+                                "@type": "ImageObject",
+                                "contentUrl": "/the-band/matt.png",
+                                "name": "Matt",
+                            },
+                            "knowsAbout": "Bass",
+                            "name": "Matt",
+                        },
+                        {
+                            "@type": "Person",
+                            "image": {
+                                "@type": "ImageObject",
+                                "contentUrl": "/the-band/sam.png",
+                                "name": "Sam",
+                            },
+                            "knowsAbout": "Drums",
+                            "name": "Sam",
+                            "url": "https://sam.pikesley.org",
+                        },
+                    ],
                 },
                 {
                     "@type": "MusicGroup",
                     "name": "JJT Duo",
-                    "sameAs": (
-                        "https://www.youtube.com/channel/UCPjiLQ-VzffhilciNow1QWQ"
-                    ),
+                    "url": ("https://www.youtube.com/channel/UCPjiLQ-VzffhilciNow1QWQ"),
                 },
                 {
                     "@type": "MusicGroup",
                     "name": "Portacle",
-                    "sameAs": "https://portacle.bandcamp.com/",
+                    "url": "https://portacle.bandcamp.com/",
                 },
             ],
             "organizer": {"@type": "Organization", "name": "Sad House Daddy"},

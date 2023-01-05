@@ -26,7 +26,7 @@ class TestMusicAlbum(TestCase):
             "locationCreated": {
                 "@type": "Place",
                 "name": "Wax Studios",
-                "sameAs": "https://waxrecordingstudio.info/",
+                "url": "https://waxrecordingstudio.info/",
             },
             "genre": "Industrial Jazz",
             "image": {
@@ -45,7 +45,6 @@ class TestMusicAlbum(TestCase):
                 {"@type": "MusicRecording", "name": "Fade Zero"},
             ],
             "sameAs": [
-                "https://rawfunkmaharishi.uk/records/flux",
                 (
                     "https://www.youtube.com/embed/videoseries"
                     "?list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"

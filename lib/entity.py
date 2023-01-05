@@ -1,7 +1,8 @@
-import json
 from pathlib import Path
 
 import yaml
+
+from lib.tools import save_json
 
 
 class Entity(dict):
@@ -22,7 +23,7 @@ class Entity(dict):
         """Populate ourself."""
         self["@context"] = "https://schema.org"
         if "website" in self.data:
-            self["sameAs"] = self.data["website"]
+            self["url"] = self.data["website"]
 
         self.refine()
 
@@ -32,7 +33,4 @@ class Entity(dict):
     def save(self, outroot="dist"):
         """Write ourselves to a disk."""
         out_dir = Path(str(self.datafile.parent).replace("data", outroot))
-        out_dir.mkdir(exist_ok=True, parents=True)
-        Path(out_dir, f"{self.datafile.stem}.json").write_text(
-            json.dumps(self, sort_keys=True), encoding="utf-8"
-        )
+        save_json(self, out_dir, f"{self.datafile.stem}.json")

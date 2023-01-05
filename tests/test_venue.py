@@ -51,14 +51,13 @@ class TestVenue(TestCase):
                 "longitude": 0.0101648,
             },
             "name": "Luna Lounge",
-            "sameAs": "https://www.lunalivemusic.com/",
+            "url": "https://www.lunalivemusic.com/",
         }
         venue = Venue("data/venues/luna.yaml")
         self.assertEqual(venue, expected)
 
     def test_saving(self):
         """Test it writes the data."""
-
         venue = Venue("data/venues/biddle-brothers.yaml")
         venue.save("tmp")
 

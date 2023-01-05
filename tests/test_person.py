@@ -24,7 +24,7 @@ class TestPerson(TestCase):
                 "contentUrl": "/the-band/sam.png",
                 "name": "Sam",
             },
-            "sameAs": "https://sam.pikesley.org",
+            "url": "https://sam.pikesley.org",
         }
 
         person = Person("data/people/sam.yaml")

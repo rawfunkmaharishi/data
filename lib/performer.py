@@ -7,4 +7,4 @@ class Performer(dict):
         self["@type"] = "MusicGroup"
         self["name"] = data["name"]
         if "website" in data:
-            self["sameAs"] = data["website"]
+            self["url"] = data["website"]

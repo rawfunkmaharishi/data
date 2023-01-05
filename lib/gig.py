@@ -1,8 +1,9 @@
-import json
 from pathlib import Path
 
 from lib.entity import Entity
 from lib.performer import Performer
+from lib.raw_funk_maharishi import RawFunkMaharishi
+from lib.tools import load_and_decontext
 
 
 class Gig(Entity):
@@ -13,37 +14,17 @@ class Gig(Entity):
         self["@type"] = "MusicEvent"
         self["startDate"] = self.datestamp
 
-        location = json.loads(
-            Path("dist", "venues", f"{self.data['venue']}.json").read_text(
-                encoding="utf-8"
-            )
+        self["location"] = load_and_decontext(
+            Path("dist", "venues", f"{self.data['venue']}.json")
         )
-        del location["@context"]
-        self["location"] = location
-        self["name"] = f"Raw Funk Maharishi live at {location['name']}"
+
+        self["name"] = f"Raw Funk Maharishi live at {self['location']['name']}"
         self["url"] = f"/gigs/{'/'.join(self.id_bits)}"
 
-        self["sameAs"] = [f"https://rawfunkmaharishi.uk{self['url']}"]
+        if self.same_as:
+            self["sameAs"] = self.same_as
 
-        if "facebook_id" in self.data:
-            self["sameAs"].append(
-                f"https://facebook.com/events/{self.data['facebook_id']}/"
-            )
-
-        if "website" in self.data:
-            self["sameAs"].append(self.data["website"])
-
-        if len(self["sameAs"]) == 1:
-            self["sameAs"] = self["sameAs"][0]
-
-        self["performer"] = [
-            Performer(
-                {
-                    "name": "Raw Funk Maharishi",
-                    "website": "https://rawfunkmaharishi.uk/",
-                }
-            )
-        ]
+        self["performer"] = [RawFunkMaharishi(with_context=False)]
 
         if "other_bands" in self.data:
             self["performer"] += list(map(Performer, self.data["other_bands"]))
@@ -88,3 +69,15 @@ class Gig(Entity):
         """Pull out the bits from the filename."""
         bits = self.datafile.stem.split("-")
         return [bits[0]] + [bits[1]] + [bits[2]] + ["-".join(bits[3:])]
+
+    @property
+    def same_as(self):
+        """Generate `sameAs`."""
+        same = []
+        if "facebook_id" in self.data:
+            same.append(f"https://facebook.com/events/{self.data['facebook_id']}/")
+
+        if "website" in self.data:
+            same.append(self.data["website"])
+
+        return same
