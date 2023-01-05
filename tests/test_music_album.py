@@ -19,7 +19,44 @@ class TestMusicAlbum(TestCase):
             "@type": "MusicAlbum",
             "identifier": "flux",
             "name": "Flux",
-            "byArtist": {"@type": "MusicGroup", "name": "Raw Funk Maharishi"},
+            "byArtist": {
+                "@type": "MusicGroup",
+                "member": [
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/joe.png",
+                            "name": "Joe",
+                        },
+                        "knowsAbout": "Guitar",
+                        "name": "Joe",
+                    },
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/matt.png",
+                            "name": "Matt",
+                        },
+                        "knowsAbout": "Bass",
+                        "name": "Matt",
+                    },
+                    {
+                        "@type": "Person",
+                        "image": {
+                            "@type": "ImageObject",
+                            "contentUrl": "/the-band/sam.png",
+                            "name": "Sam",
+                        },
+                        "knowsAbout": "Drums",
+                        "name": "Sam",
+                        "url": "https://sam.pikesley.org",
+                    },
+                ],
+                "name": "Raw Funk Maharishi",
+                "url": "https://rawfunkmaharishi.uk/",
+            },
             "datePublished": "2018-04-28",
             "albumReleaseType": "EP",
             "url": "/records/flux",

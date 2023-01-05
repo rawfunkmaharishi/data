@@ -1,4 +1,5 @@
 from lib.entity import Entity
+from lib.raw_funk_maharishi import RawFunkMaharishi
 
 
 class MusicAlbum(Entity):
@@ -8,7 +9,7 @@ class MusicAlbum(Entity):
         self["@type"] = "MusicAlbum"
         self["name"] = self.data["title"]
         self["identifier"] = self.identifier
-        self["byArtist"] = {"@type": "MusicGroup", "name": "Raw Funk Maharishi"}
+        self["byArtist"] = RawFunkMaharishi(with_context=False)
         self["datePublished"] = str(self.data["release_date"])
         self["albumReleaseType"] = self.data["type"]
         self["url"] = f"/records/{self.identifier}"
