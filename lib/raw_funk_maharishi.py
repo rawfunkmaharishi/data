@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import yaml
+
 from lib.performer import Performer
 from lib.tools import load_and_decontext, save_json
 
@@ -23,6 +25,28 @@ class RawFunkMaharishi(Performer):
             )
         )
 
+        self["review"] = self.reviews
+
     def save(self, outroot="dist"):
         """Write ourselves to a disk."""
         save_json(self, outroot, "raw-funk-maharishi.json")
+
+    @property
+    def reviews(self):
+        """Gather reviews of the band."""
+        results = []
+
+        for review in yaml.safe_load(
+            Path("data/reviews.yaml").read_text(encoding="utf-8")
+        ):
+            rvw = {
+                "@type": "Review",
+                "reviewBody": review["quote"],
+                "author": review["source"],
+            }
+            if "url" in review:
+                rvw["url"] = review["url"]
+
+            results.append(rvw)
+
+        return results

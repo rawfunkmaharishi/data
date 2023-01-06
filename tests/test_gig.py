@@ -75,6 +75,35 @@ class TestGig(TestCase):
                         "url": "https://sam.pikesley.org",
                     },
                 ],
+                "review": [
+                    {
+                        "@type": "Review",
+                        "reviewBody": "You remind me of Steely Dan without the vocals",
+                        "author": "Singer/keyboard player from DWT",
+                        "url": "https://twitter.com/dwt_music",
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": "Ambient Jazz-Funk",
+                        "author": "Kitty",
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": "Uncommonly good driving music",
+                        "author": "@catallaxer on Twitter",
+                        "url": (
+                            "https://twitter.com/catallaxer/status/572134901018959872"
+                        ),
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": (
+                            "What Herbie Hancock would sound like if he was a 3-piece"
+                            " band"
+                        ),
+                        "author": "Guitarist from the Dead Frets",
+                    },
+                ],
             },
             "recordedIn": {
                 "@type": "VideoObject",
@@ -149,6 +178,38 @@ class TestGig(TestCase):
                             "knowsAbout": "Drums",
                             "name": "Sam",
                             "url": "https://sam.pikesley.org",
+                        },
+                    ],
+                    "review": [
+                        {
+                            "@type": "Review",
+                            "reviewBody": (
+                                "You remind me of Steely Dan without the vocals"
+                            ),
+                            "author": "Singer/keyboard player from DWT",
+                            "url": "https://twitter.com/dwt_music",
+                        },
+                        {
+                            "@type": "Review",
+                            "reviewBody": "Ambient Jazz-Funk",
+                            "author": "Kitty",
+                        },
+                        {
+                            "@type": "Review",
+                            "reviewBody": "Uncommonly good driving music",
+                            "author": "@catallaxer on Twitter",
+                            "url": (
+                                "https://twitter.com/catallaxer/"
+                                "status/572134901018959872"
+                            ),
+                        },
+                        {
+                            "@type": "Review",
+                            "reviewBody": (
+                                "What Herbie Hancock would sound like if he was a"
+                                " 3-piece band"
+                            ),
+                            "author": "Guitarist from the Dead Frets",
                         },
                     ],
                 },
@@ -231,6 +292,35 @@ class TestGig(TestCase):
                         "url": "https://sam.pikesley.org",
                     },
                 ],
+                "review": [
+                    {
+                        "@type": "Review",
+                        "reviewBody": "You remind me of Steely Dan without the vocals",
+                        "author": "Singer/keyboard player from DWT",
+                        "url": "https://twitter.com/dwt_music",
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": "Ambient Jazz-Funk",
+                        "author": "Kitty",
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": "Uncommonly good driving music",
+                        "author": "@catallaxer on Twitter",
+                        "url": (
+                            "https://twitter.com/catallaxer/status/572134901018959872"
+                        ),
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": (
+                            "What Herbie Hancock would sound like if he was a 3-piece"
+                            " band"
+                        ),
+                        "author": "Guitarist from the Dead Frets",
+                    },
+                ],
             },
         }
 
@@ -297,6 +387,35 @@ class TestGig(TestCase):
                         "knowsAbout": "Drums",
                         "name": "Sam",
                         "url": "https://sam.pikesley.org",
+                    },
+                ],
+                "review": [
+                    {
+                        "@type": "Review",
+                        "reviewBody": "You remind me of Steely Dan without the vocals",
+                        "author": "Singer/keyboard player from DWT",
+                        "url": "https://twitter.com/dwt_music",
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": "Ambient Jazz-Funk",
+                        "author": "Kitty",
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": "Uncommonly good driving music",
+                        "author": "@catallaxer on Twitter",
+                        "url": (
+                            "https://twitter.com/catallaxer/status/572134901018959872"
+                        ),
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": (
+                            "What Herbie Hancock would sound like if he was a 3-piece"
+                            " band"
+                        ),
+                        "author": "Guitarist from the Dead Frets",
                     },
                 ],
             },
@@ -372,6 +491,35 @@ class TestGig(TestCase):
                         "url": "https://sam.pikesley.org",
                     },
                 ],
+                "review": [
+                    {
+                        "@type": "Review",
+                        "reviewBody": "You remind me of Steely Dan without the vocals",
+                        "author": "Singer/keyboard player from DWT",
+                        "url": "https://twitter.com/dwt_music",
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": "Ambient Jazz-Funk",
+                        "author": "Kitty",
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": "Uncommonly good driving music",
+                        "author": "@catallaxer on Twitter",
+                        "url": (
+                            "https://twitter.com/catallaxer/status/572134901018959872"
+                        ),
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewBody": (
+                            "What Herbie Hancock would sound like if he was a 3-piece"
+                            " band"
+                        ),
+                        "author": "Guitarist from the Dead Frets",
+                    },
+                ],
             },
             "offers": {"@type": "offer", "price": 3, "priceCurrency": "GBP"},
         }
@@ -443,11 +591,43 @@ class TestGig(TestCase):
                             "url": "https://sam.pikesley.org",
                         },
                     ],
+                    "review": [
+                        {
+                            "@type": "Review",
+                            "reviewBody": (
+                                "You remind me of Steely Dan without the vocals"
+                            ),
+                            "author": "Singer/keyboard player from DWT",
+                            "url": "https://twitter.com/dwt_music",
+                        },
+                        {
+                            "@type": "Review",
+                            "reviewBody": "Ambient Jazz-Funk",
+                            "author": "Kitty",
+                        },
+                        {
+                            "@type": "Review",
+                            "reviewBody": "Uncommonly good driving music",
+                            "author": "@catallaxer on Twitter",
+                            "url": (
+                                "https://twitter.com/catallaxer/"
+                                "status/572134901018959872"
+                            ),
+                        },
+                        {
+                            "@type": "Review",
+                            "reviewBody": (
+                                "What Herbie Hancock would sound like if he was a"
+                                " 3-piece band"
+                            ),
+                            "author": "Guitarist from the Dead Frets",
+                        },
+                    ],
                 },
                 {
                     "@type": "MusicGroup",
                     "name": "JJT Duo",
-                    "url": ("https://www.youtube.com/channel/UCPjiLQ-VzffhilciNow1QWQ"),
+                    "url": "https://www.youtube.com/channel/UCPjiLQ-VzffhilciNow1QWQ",
                 },
                 {
                     "@type": "MusicGroup",
