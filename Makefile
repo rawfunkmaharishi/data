@@ -4,7 +4,7 @@ ID = rfm/${PROJECT}
 all: format lint test clean  ## format, lint, test, clean (default)
 
 black:
-	python -m black .
+	python -m black --preview .
 
 isort:
 	python -m isort .
