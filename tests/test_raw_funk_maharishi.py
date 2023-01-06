@@ -60,18 +60,21 @@ class TestRawFunkMaharishi(TestCase):
                 {
                     "@type": "Review",
                     "reviewBody": "You remind me of Steely Dan without the vocals",
-                    "author": "Singer/keyboard player from DWT",
+                    "author": {
+                        "type": "Person",
+                        "name": "Singer/keyboard player from DWT",
+                    },
                     "url": "https://twitter.com/dwt_music",
                 },
                 {
                     "@type": "Review",
                     "reviewBody": "Ambient Jazz-Funk",
-                    "author": "Kitty",
+                    "author": {"type": "Person", "name": "Kitty"},
                 },
                 {
                     "@type": "Review",
                     "reviewBody": "Uncommonly good driving music",
-                    "author": "@catallaxer on Twitter",
+                    "author": {"type": "Person", "name": "@catallaxer on Twitter"},
                     "url": "https://twitter.com/catallaxer/status/572134901018959872",
                 },
                 {
@@ -79,9 +82,15 @@ class TestRawFunkMaharishi(TestCase):
                     "reviewBody": (
                         "What Herbie Hancock would sound like if he was a 3-piece band"
                     ),
-                    "author": "Guitarist from the Dead Frets",
+                    "author": {
+                        "type": "Person",
+                        "name": "Guitarist from the Dead Frets",
+                    },
                 },
             ],
+            "aggregateRating": (
+                {"@type": "AggregateRating", "reviewCount": 4, "ratingValue": 5},
+            ),
         }
 
         rfm = RawFunkMaharishi()
@@ -99,10 +108,11 @@ class TestRawFunkMaharishi(TestCase):
         self.assertEqual(
             actual,
             {
-                "@type": "MusicGroup",
-                "name": "Raw Funk Maharishi",
-                "url": "https://rawfunkmaharishi.uk/",
                 "@context": "https://schema.org",
+                "@type": "MusicGroup",
+                "aggregateRating": [
+                    {"@type": "AggregateRating", "ratingValue": 5, "reviewCount": 4}
+                ],
                 "member": [
                     {
                         "@type": "Person",
@@ -136,22 +146,26 @@ class TestRawFunkMaharishi(TestCase):
                         "url": "https://sam.pikesley.org",
                     },
                 ],
+                "name": "Raw Funk Maharishi",
                 "review": [
                     {
                         "@type": "Review",
                         "reviewBody": "You remind me of Steely Dan without the vocals",
-                        "author": "Singer/keyboard player from DWT",
+                        "author": {
+                            "type": "Person",
+                            "name": "Singer/keyboard player from DWT",
+                        },
                         "url": "https://twitter.com/dwt_music",
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Ambient Jazz-Funk",
-                        "author": "Kitty",
+                        "author": {"type": "Person", "name": "Kitty"},
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Uncommonly good driving music",
-                        "author": "@catallaxer on Twitter",
+                        "author": {"type": "Person", "name": "@catallaxer on Twitter"},
                         "url": (
                             "https://twitter.com/catallaxer/status/572134901018959872"
                         ),
@@ -162,8 +176,12 @@ class TestRawFunkMaharishi(TestCase):
                             "What Herbie Hancock would sound like if he was a 3-piece"
                             " band"
                         ),
-                        "author": "Guitarist from the Dead Frets",
+                        "author": {
+                            "type": "Person",
+                            "name": "Guitarist from the Dead Frets",
+                        },
                     },
                 ],
+                "url": "https://rawfunkmaharishi.uk/",
             },
         )

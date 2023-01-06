@@ -17,10 +17,12 @@ class TestMusicAlbum(TestCase):
         expected = {
             "@context": "https://schema.org",
             "@type": "MusicAlbum",
-            "identifier": "flux",
             "name": "Flux",
+            "identifier": "flux",
             "byArtist": {
                 "@type": "MusicGroup",
+                "name": "Raw Funk Maharishi",
+                "url": "https://rawfunkmaharishi.uk/",
                 "member": [
                     {
                         "@type": "Person",
@@ -58,18 +60,21 @@ class TestMusicAlbum(TestCase):
                     {
                         "@type": "Review",
                         "reviewBody": "You remind me of Steely Dan without the vocals",
-                        "author": "Singer/keyboard player from DWT",
+                        "author": {
+                            "type": "Person",
+                            "name": "Singer/keyboard player from DWT",
+                        },
                         "url": "https://twitter.com/dwt_music",
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Ambient Jazz-Funk",
-                        "author": "Kitty",
+                        "author": {"type": "Person", "name": "Kitty"},
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Uncommonly good driving music",
-                        "author": "@catallaxer on Twitter",
+                        "author": {"type": "Person", "name": "@catallaxer on Twitter"},
                         "url": (
                             "https://twitter.com/catallaxer/status/572134901018959872"
                         ),
@@ -80,11 +85,15 @@ class TestMusicAlbum(TestCase):
                             "What Herbie Hancock would sound like if he was a 3-piece"
                             " band"
                         ),
-                        "author": "Guitarist from the Dead Frets",
+                        "author": {
+                            "type": "Person",
+                            "name": "Guitarist from the Dead Frets",
+                        },
                     },
                 ],
-                "name": "Raw Funk Maharishi",
-                "url": "https://rawfunkmaharishi.uk/",
+                "aggregateRating": (
+                    {"@type": "AggregateRating", "reviewCount": 4, "ratingValue": 5},
+                ),
             },
             "datePublished": "2018-04-28",
             "albumReleaseType": "EP",
@@ -112,8 +121,8 @@ class TestMusicAlbum(TestCase):
             ],
             "sameAs": [
                 (
-                    "https://www.youtube.com/embed/videoseries"
-                    "?list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
+                    "https://www.youtube.com/embed/videoseries?"
+                    "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
                 ),
                 "https://open.spotify.com/embed/album/0V93nqs6M6JNtHE0OJvvgY",
                 "https://music.apple.com/us/album/flux/1372617971",

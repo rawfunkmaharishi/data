@@ -26,6 +26,13 @@ class RawFunkMaharishi(Performer):
         )
 
         self["review"] = self.reviews
+        self["aggregateRating"] = (
+            {
+                "@type": "AggregateRating",
+                "reviewCount": len(self["review"]),
+                "ratingValue": 5,
+            },
+        )
 
     def save(self, outroot="dist"):
         """Write ourselves to a disk."""
@@ -42,7 +49,10 @@ class RawFunkMaharishi(Performer):
             rvw = {
                 "@type": "Review",
                 "reviewBody": review["quote"],
-                "author": review["source"],
+                "author": {
+                    "type": "Person",
+                    "name": review["source"],
+                },
             }
             if "url" in review:
                 rvw["url"] = review["url"]

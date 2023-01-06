@@ -37,7 +37,6 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Luna Lounge",
             "url": "/gigs/2022/12/15/luna",
-            "isAccessibleForFree": True,
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
@@ -79,18 +78,21 @@ class TestGig(TestCase):
                     {
                         "@type": "Review",
                         "reviewBody": "You remind me of Steely Dan without the vocals",
-                        "author": "Singer/keyboard player from DWT",
+                        "author": {
+                            "type": "Person",
+                            "name": "Singer/keyboard player from DWT",
+                        },
                         "url": "https://twitter.com/dwt_music",
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Ambient Jazz-Funk",
-                        "author": "Kitty",
+                        "author": {"type": "Person", "name": "Kitty"},
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Uncommonly good driving music",
-                        "author": "@catallaxer on Twitter",
+                        "author": {"type": "Person", "name": "@catallaxer on Twitter"},
                         "url": (
                             "https://twitter.com/catallaxer/status/572134901018959872"
                         ),
@@ -101,10 +103,17 @@ class TestGig(TestCase):
                             "What Herbie Hancock would sound like if he was a 3-piece"
                             " band"
                         ),
-                        "author": "Guitarist from the Dead Frets",
+                        "author": {
+                            "type": "Person",
+                            "name": "Guitarist from the Dead Frets",
+                        },
                     },
                 ],
+                "aggregateRating": (
+                    {"@type": "AggregateRating", "reviewCount": 4, "ratingValue": 5},
+                ),
             },
+            "isAccessibleForFree": True,
             "recordedIn": {
                 "@type": "VideoObject",
                 "@id": "https://www.youtube.com/watch?v=JYP6eA5yqc4",
@@ -141,7 +150,6 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Zigfrid von Underbelly",
             "url": "/gigs/2017/08/14/hoxton-underbelly",
-            "isAccessibleForFree": True,
             "performer": [
                 {
                     "@type": "MusicGroup",
@@ -186,22 +194,25 @@ class TestGig(TestCase):
                             "reviewBody": (
                                 "You remind me of Steely Dan without the vocals"
                             ),
-                            "author": "Singer/keyboard player from DWT",
+                            "author": {
+                                "type": "Person",
+                                "name": "Singer/keyboard player from DWT",
+                            },
                             "url": "https://twitter.com/dwt_music",
                         },
                         {
                             "@type": "Review",
                             "reviewBody": "Ambient Jazz-Funk",
-                            "author": "Kitty",
+                            "author": {"type": "Person", "name": "Kitty"},
                         },
                         {
                             "@type": "Review",
                             "reviewBody": "Uncommonly good driving music",
-                            "author": "@catallaxer on Twitter",
-                            "url": (
-                                "https://twitter.com/catallaxer/"
-                                "status/572134901018959872"
-                            ),
+                            "author": {
+                                "type": "Person",
+                                "name": "@catallaxer on Twitter",
+                            },
+                            "url": "https://twitter.com/catallaxer/status/572134901018959872",
                         },
                         {
                             "@type": "Review",
@@ -209,9 +220,19 @@ class TestGig(TestCase):
                                 "What Herbie Hancock would sound like if he was a"
                                 " 3-piece band"
                             ),
-                            "author": "Guitarist from the Dead Frets",
+                            "author": {
+                                "type": "Person",
+                                "name": "Guitarist from the Dead Frets",
+                            },
                         },
                     ],
+                    "aggregateRating": (
+                        {
+                            "@type": "AggregateRating",
+                            "reviewCount": 4,
+                            "ratingValue": 5,
+                        },
+                    ),
                 },
                 {
                     "@type": "MusicGroup",
@@ -224,6 +245,7 @@ class TestGig(TestCase):
                     "url": "https://hotvox.co.uk/artists/dirty-palace",
                 },
             ],
+            "isAccessibleForFree": True,
         }
 
         gig = Gig("data/gigs/2017-08-14-hoxton-underbelly.yaml")
@@ -251,10 +273,7 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Zigfrid von Underbelly",
             "url": "/gigs/2015/08/11/hoxton-underbelly",
-            "isAccessibleForFree": True,
-            "sameAs": [
-                "https://facebook.com/events/674266616008095/",
-            ],
+            "sameAs": ["https://facebook.com/events/674266616008095/"],
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
@@ -296,18 +315,21 @@ class TestGig(TestCase):
                     {
                         "@type": "Review",
                         "reviewBody": "You remind me of Steely Dan without the vocals",
-                        "author": "Singer/keyboard player from DWT",
+                        "author": {
+                            "type": "Person",
+                            "name": "Singer/keyboard player from DWT",
+                        },
                         "url": "https://twitter.com/dwt_music",
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Ambient Jazz-Funk",
-                        "author": "Kitty",
+                        "author": {"type": "Person", "name": "Kitty"},
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Uncommonly good driving music",
-                        "author": "@catallaxer on Twitter",
+                        "author": {"type": "Person", "name": "@catallaxer on Twitter"},
                         "url": (
                             "https://twitter.com/catallaxer/status/572134901018959872"
                         ),
@@ -318,10 +340,17 @@ class TestGig(TestCase):
                             "What Herbie Hancock would sound like if he was a 3-piece"
                             " band"
                         ),
-                        "author": "Guitarist from the Dead Frets",
+                        "author": {
+                            "type": "Person",
+                            "name": "Guitarist from the Dead Frets",
+                        },
                     },
                 ],
+                "aggregateRating": (
+                    {"@type": "AggregateRating", "reviewCount": 4, "ratingValue": 5},
+                ),
             },
+            "isAccessibleForFree": True,
         }
 
         gig = Gig("data/gigs/2015-08-11-hoxton-underbelly.yaml")
@@ -349,9 +378,7 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at The Islington",
             "url": "/gigs/2016/09/04/the-islington",
-            "sameAs": [
-                "https://facebook.com/events/1771443439734606/",
-            ],
+            "sameAs": ["https://facebook.com/events/1771443439734606/"],
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
@@ -393,18 +420,21 @@ class TestGig(TestCase):
                     {
                         "@type": "Review",
                         "reviewBody": "You remind me of Steely Dan without the vocals",
-                        "author": "Singer/keyboard player from DWT",
+                        "author": {
+                            "type": "Person",
+                            "name": "Singer/keyboard player from DWT",
+                        },
                         "url": "https://twitter.com/dwt_music",
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Ambient Jazz-Funk",
-                        "author": "Kitty",
+                        "author": {"type": "Person", "name": "Kitty"},
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Uncommonly good driving music",
-                        "author": "@catallaxer on Twitter",
+                        "author": {"type": "Person", "name": "@catallaxer on Twitter"},
                         "url": (
                             "https://twitter.com/catallaxer/status/572134901018959872"
                         ),
@@ -415,9 +445,15 @@ class TestGig(TestCase):
                             "What Herbie Hancock would sound like if he was a 3-piece"
                             " band"
                         ),
-                        "author": "Guitarist from the Dead Frets",
+                        "author": {
+                            "type": "Person",
+                            "name": "Guitarist from the Dead Frets",
+                        },
                     },
                 ],
+                "aggregateRating": (
+                    {"@type": "AggregateRating", "reviewCount": 4, "ratingValue": 5},
+                ),
             },
             "offers": {"@type": "offer", "price": 6, "priceCurrency": "GBP"},
         }
@@ -429,13 +465,7 @@ class TestGig(TestCase):
         """Test it generates more sameAs."""
         expected = {
             "@context": "https://schema.org",
-            "sameAs": [
-                "https://facebook.com/events/466457933711377/",
-                (
-                    "https://www.newcrossinn.com/event/"
-                    "friday-funk-project-with-london-beat-club-more/"
-                ),
-            ],
+            "url": "/gigs/2017/08/18/new-cross-inn",
             "@type": "MusicEvent",
             "startDate": "2017-08-18T20:00",
             "location": {
@@ -453,7 +483,13 @@ class TestGig(TestCase):
                 "name": "New Cross Inn Hostel",
             },
             "name": "Raw Funk Maharishi live at New Cross Inn Hostel",
-            "url": "/gigs/2017/08/18/new-cross-inn",
+            "sameAs": [
+                "https://facebook.com/events/466457933711377/",
+                (
+                    "https://www.newcrossinn.com/event/"
+                    "friday-funk-project-with-london-beat-club-more/"
+                ),
+            ],
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
@@ -495,18 +531,21 @@ class TestGig(TestCase):
                     {
                         "@type": "Review",
                         "reviewBody": "You remind me of Steely Dan without the vocals",
-                        "author": "Singer/keyboard player from DWT",
+                        "author": {
+                            "type": "Person",
+                            "name": "Singer/keyboard player from DWT",
+                        },
                         "url": "https://twitter.com/dwt_music",
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Ambient Jazz-Funk",
-                        "author": "Kitty",
+                        "author": {"type": "Person", "name": "Kitty"},
                     },
                     {
                         "@type": "Review",
                         "reviewBody": "Uncommonly good driving music",
-                        "author": "@catallaxer on Twitter",
+                        "author": {"type": "Person", "name": "@catallaxer on Twitter"},
                         "url": (
                             "https://twitter.com/catallaxer/status/572134901018959872"
                         ),
@@ -517,9 +556,15 @@ class TestGig(TestCase):
                             "What Herbie Hancock would sound like if he was a 3-piece"
                             " band"
                         ),
-                        "author": "Guitarist from the Dead Frets",
+                        "author": {
+                            "type": "Person",
+                            "name": "Guitarist from the Dead Frets",
+                        },
                     },
                 ],
+                "aggregateRating": (
+                    {"@type": "AggregateRating", "reviewCount": 4, "ratingValue": 5},
+                ),
             },
             "offers": {"@type": "offer", "price": 3, "priceCurrency": "GBP"},
         }
@@ -549,10 +594,7 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Biddle Brothers",
             "url": "/gigs/2019/10/24/sad-house-daddy",
-            "isAccessibleForFree": True,
-            "sameAs": [
-                "https://facebook.com/events/577151796358191/",
-            ],
+            "sameAs": ["https://facebook.com/events/577151796358191/"],
             "performer": [
                 {
                     "@type": "MusicGroup",
@@ -597,22 +639,25 @@ class TestGig(TestCase):
                             "reviewBody": (
                                 "You remind me of Steely Dan without the vocals"
                             ),
-                            "author": "Singer/keyboard player from DWT",
+                            "author": {
+                                "type": "Person",
+                                "name": "Singer/keyboard player from DWT",
+                            },
                             "url": "https://twitter.com/dwt_music",
                         },
                         {
                             "@type": "Review",
                             "reviewBody": "Ambient Jazz-Funk",
-                            "author": "Kitty",
+                            "author": {"type": "Person", "name": "Kitty"},
                         },
                         {
                             "@type": "Review",
                             "reviewBody": "Uncommonly good driving music",
-                            "author": "@catallaxer on Twitter",
-                            "url": (
-                                "https://twitter.com/catallaxer/"
-                                "status/572134901018959872"
-                            ),
+                            "author": {
+                                "type": "Person",
+                                "name": "@catallaxer on Twitter",
+                            },
+                            "url": "https://twitter.com/catallaxer/status/572134901018959872",
                         },
                         {
                             "@type": "Review",
@@ -620,9 +665,19 @@ class TestGig(TestCase):
                                 "What Herbie Hancock would sound like if he was a"
                                 " 3-piece band"
                             ),
-                            "author": "Guitarist from the Dead Frets",
+                            "author": {
+                                "type": "Person",
+                                "name": "Guitarist from the Dead Frets",
+                            },
                         },
                     ],
+                    "aggregateRating": (
+                        {
+                            "@type": "AggregateRating",
+                            "reviewCount": 4,
+                            "ratingValue": 5,
+                        },
+                    ),
                 },
                 {
                     "@type": "MusicGroup",
@@ -635,6 +690,7 @@ class TestGig(TestCase):
                     "url": "https://portacle.bandcamp.com/",
                 },
             ],
+            "isAccessibleForFree": True,
             "organizer": {"@type": "Organization", "name": "Sad House Daddy"},
         }
 
