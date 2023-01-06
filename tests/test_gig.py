@@ -37,6 +37,7 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Luna Lounge",
             "url": "/gigs/2022/12/15/luna",
+            "isAccessibleForFree": True,
             "performer": {
                 "@type": "MusicGroup",
                 "name": "Raw Funk Maharishi",
@@ -111,6 +112,7 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Zigfrid von Underbelly",
             "url": "/gigs/2017/08/14/hoxton-underbelly",
+            "isAccessibleForFree": True,
             "performer": [
                 {
                     "@type": "MusicGroup",
@@ -188,6 +190,7 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Zigfrid von Underbelly",
             "url": "/gigs/2015/08/11/hoxton-underbelly",
+            "isAccessibleForFree": True,
             "sameAs": [
                 "https://facebook.com/events/674266616008095/",
             ],
@@ -398,6 +401,7 @@ class TestGig(TestCase):
             },
             "name": "Raw Funk Maharishi live at Biddle Brothers",
             "url": "/gigs/2019/10/24/sad-house-daddy",
+            "isAccessibleForFree": True,
             "sameAs": [
                 "https://facebook.com/events/577151796358191/",
             ],

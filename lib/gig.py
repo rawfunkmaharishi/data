@@ -39,6 +39,9 @@ class Gig(Entity):
                 "priceCurrency": "GBP",
             }
 
+        else:
+            self["isAccessibleForFree"] = True
+
         if "youtube_id" in self.data:
             self["recordedIn"] = {
                 "@type": "VideoObject",
