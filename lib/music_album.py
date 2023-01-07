@@ -34,4 +34,5 @@ class MusicAlbum(Entity):
         self["sameAs"] = [
             f"https://www.youtube.com/embed/videoseries?list={self.data['youtube_id']}",
             f"https://open.spotify.com/embed/album/{self.data['spotify_id']}",
-        ] + list(map(lambda x: x["url"], self.data["outlets"]))
+            f"https://embed.music.apple.com/us/album/{self.data['apple_id']}",
+        ] + list(map(lambda x: x["url"], self.data["outlets"] or []))

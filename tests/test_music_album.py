@@ -125,7 +125,7 @@ class TestMusicAlbum(TestCase):
                     "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
                 ),
                 "https://open.spotify.com/embed/album/0V93nqs6M6JNtHE0OJvvgY",
-                "https://music.apple.com/us/album/flux/1372617971",
+                "https://embed.music.apple.com/us/album/flux/1372617971",
                 "https://www.amazon.co.uk/Flux-Raw-Funk-Maharishi/dp/B07CG3PG84/",
             ],
         }
