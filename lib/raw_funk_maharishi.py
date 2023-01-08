@@ -26,13 +26,11 @@ class RawFunkMaharishi(Performer):
         )
 
         self["review"] = self.reviews
-        self["aggregateRating"] = (
-            {
-                "@type": "AggregateRating",
-                "reviewCount": len(self["review"]),
-                "ratingValue": 5,
-            },
-        )
+        self["aggregateRating"] = {
+            "@type": "AggregateRating",
+            "reviewCount": len(self["review"]),
+            "ratingValue": 5,
+        }
 
     def save(self, outroot="dist"):
         """Write ourselves to a disk."""

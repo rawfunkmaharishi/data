@@ -1,5 +1,6 @@
 from unittest import TestCase
 
+from fixtures.band.band import band
 from helpers import clean_house
 
 from lib.music_album import MusicAlbum
@@ -19,82 +20,7 @@ class TestMusicAlbum(TestCase):
             "@type": "MusicAlbum",
             "name": "Flux",
             "identifier": "flux",
-            "byArtist": {
-                "@type": "MusicGroup",
-                "name": "Raw Funk Maharishi",
-                "url": "https://rawfunkmaharishi.uk/",
-                "member": [
-                    {
-                        "@type": "Person",
-                        "image": {
-                            "@type": "ImageObject",
-                            "contentUrl": "/the-band/joe.png",
-                            "name": "Joe",
-                        },
-                        "knowsAbout": "Guitar",
-                        "name": "Joe",
-                    },
-                    {
-                        "@type": "Person",
-                        "image": {
-                            "@type": "ImageObject",
-                            "contentUrl": "/the-band/matt.png",
-                            "name": "Matt",
-                        },
-                        "knowsAbout": "Bass",
-                        "name": "Matt",
-                    },
-                    {
-                        "@type": "Person",
-                        "image": {
-                            "@type": "ImageObject",
-                            "contentUrl": "/the-band/sam.png",
-                            "name": "Sam",
-                        },
-                        "knowsAbout": "Drums",
-                        "name": "Sam",
-                        "url": "https://sam.pikesley.org",
-                    },
-                ],
-                "review": [
-                    {
-                        "@type": "Review",
-                        "reviewBody": "You remind me of Steely Dan without the vocals",
-                        "author": {
-                            "type": "Person",
-                            "name": "Singer/keyboard player from DWT",
-                        },
-                        "url": "https://twitter.com/dwt_music",
-                    },
-                    {
-                        "@type": "Review",
-                        "reviewBody": "Ambient Jazz-Funk",
-                        "author": {"type": "Person", "name": "Kitty"},
-                    },
-                    {
-                        "@type": "Review",
-                        "reviewBody": "Uncommonly good driving music",
-                        "author": {"type": "Person", "name": "@catallaxer on Twitter"},
-                        "url": (
-                            "https://twitter.com/catallaxer/status/572134901018959872"
-                        ),
-                    },
-                    {
-                        "@type": "Review",
-                        "reviewBody": (
-                            "What Herbie Hancock would sound like if he was a 3-piece"
-                            " band"
-                        ),
-                        "author": {
-                            "type": "Person",
-                            "name": "Guitarist from the Dead Frets",
-                        },
-                    },
-                ],
-                "aggregateRating": (
-                    {"@type": "AggregateRating", "reviewCount": 4, "ratingValue": 5},
-                ),
-            },
+            "byArtist": band,
             "datePublished": "2018-04-28",
             "albumReleaseType": "EP",
             "url": "/records/flux",
