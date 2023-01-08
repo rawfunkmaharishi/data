@@ -35,4 +35,5 @@ class MusicAlbum(Entity):
             f"https://www.youtube.com/embed/videoseries?list={self.data['youtube_id']}",
             f"https://open.spotify.com/embed/album/{self.data['spotify_id']}",
             f"https://embed.music.apple.com/us/album/{self.data['apple_id']}",
+            f"https://widget.deezer.com/widget/dark/album/{self.data['deezer_id']}",
         ] + list(map(lambda x: x["url"], self.data["outlets"] or []))

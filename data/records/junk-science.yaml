@@ -19,6 +19,7 @@ tracks:
 spotify_id: 1B3E1CK9jXe7z6o7UBgo3I
 youtube_id: PLuPLM2FI60-Nj3OxlwDFbjG4SiGMrEvU_
 apple_id: junk-science/1464033930
+deezer_id: 97150232
 outlets:
   - name: amazon
     url: https://www.amazon.co.uk/Junk-Science-Raw-Funk-Maharishi/dp/B07RX5ZZL3/

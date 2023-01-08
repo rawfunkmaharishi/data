@@ -17,6 +17,7 @@ tracks:
 spotify_id: 5GoS0MKtTna4X90fStHjvh
 youtube_id: PL_-_2KA93U6SIE2rJJbUlIwRhpns9G_rg
 apple_id: takatsuka/1089162061
+deezer_id: 12532182
 outlets:
   - name: amazon
     url:  https://www.amazon.co.uk/gp/product/B01CH4A5ZG
