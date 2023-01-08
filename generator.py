@@ -64,9 +64,9 @@ def make_rfm():
 def make_index():
     """Make a front page."""
     things = {
-        "The band": "raw-funk-maharishi.json",
-        "Records": "records.json",
-        "Gigs": "gigs.json",
+        "The band": "/raw-funk-maharishi.json",
+        "Records": "/records.json",
+        "Gigs": "/gigs.json",
     }
 
     save_json(things, "dist", "index.json")
