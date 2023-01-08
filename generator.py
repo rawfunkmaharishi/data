@@ -37,26 +37,39 @@ def make_records():
     make_list(MusicAlbum, "records", "datePublished")
 
 
+def make_items(klass, directory):
+    """Make a collection."""
+    things = Path("data", directory).glob("**/*.yaml")
+    for thing in things:
+        item = klass(thing)
+        item.save()
+
+
 def make_venues():
     """Make the `Venues` data."""
-    venues = Path("data/venues").glob("**/*.yaml")
-    for venue in venues:
-        ven = Venue(venue)
-        ven.save()
+    make_items(Venue, "venues")
 
 
 def make_people():
     """Make the `People` data."""
-    people = Path("data/people").glob("**/*.yaml")
-    for person in people:
-        prsn = Person(person)
-        prsn.save()
+    make_items(Person, "people")
 
 
 def make_rfm():
     """Make the `RawFunkMaharishi` data."""
     rfm = RawFunkMaharishi()
     rfm.save()
+
+
+def make_index():
+    """Make a front page."""
+    things = {
+        "The band": "raw-funk-maharishi.json",
+        "Records": "records.json",
+        "Gigs": "gigs.json",
+    }
+
+    save_json(things, "dist", "index.json")
 
 
 # this could use some tests tbh
@@ -67,3 +80,4 @@ if __name__ == "__main__":
     make_gigs()
     make_records()
     make_rfm()
+    make_index()
