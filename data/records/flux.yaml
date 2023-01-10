@@ -16,10 +16,9 @@ tracks:
   - Tree Deliveries
   - Ceramic Dragon
   - Fade Zero
-spotify_id: 0V93nqs6M6JNtHE0OJvvgY
-youtube_id: PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9
-apple_id: flux/1372617971
-deezer_id: 61451872
-outlets:
-  - name: amazon
-    url: https://www.amazon.co.uk/Flux-Raw-Funk-Maharishi/dp/B07CG3PG84/
+streaming_ids:
+  spotify: 0V93nqs6M6JNtHE0OJvvgY
+  youtube: PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9
+  apple: flux/1372617971
+  amazon:  B07CG3PG84
+  deezer: 61451872

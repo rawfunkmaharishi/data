@@ -46,14 +46,14 @@ class TestMusicAlbum(TestCase):
                 {"@type": "MusicRecording", "name": "Fade Zero"},
             ],
             "sameAs": [
+                "https://embed.music.apple.com/us/album/flux/1372617971",
+                "https://music.amazon.co.uk/embed/B07CG3PG84",
+                "https://open.spotify.com/embed/album/0V93nqs6M6JNtHE0OJvvgY",
+                "https://widget.deezer.com/widget/dark/album/61451872",
                 (
                     "https://www.youtube.com/embed/videoseries?"
                     "list=PLuPLM2FI60-OlLoRt_FsbRFmi6v5wXKm9"
                 ),
-                "https://open.spotify.com/embed/album/0V93nqs6M6JNtHE0OJvvgY",
-                "https://embed.music.apple.com/us/album/flux/1372617971",
-                "https://widget.deezer.com/widget/dark/album/61451872",
-                "https://www.amazon.co.uk/Flux-Raw-Funk-Maharishi/dp/B07CG3PG84/",
             ],
         }
 

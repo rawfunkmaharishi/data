@@ -14,10 +14,9 @@ tracks:
   - Don The Crown
   - Bernard
   - Tortoise Stampede
-spotify_id: 5GoS0MKtTna4X90fStHjvh
-youtube_id: PL_-_2KA93U6SIE2rJJbUlIwRhpns9G_rg
-apple_id: takatsuka/1089162061
-deezer_id: 12532182
-outlets:
-  - name: amazon
-    url:  https://www.amazon.co.uk/gp/product/B01CH4A5ZG
+streaming_ids:
+  spotify: 5GoS0MKtTna4X90fStHjvh
+  youtube: OLAK5uy_kZhGKzRQQLk_JWEXRiAg6VAJcbm5Gom1k
+  apple: takatsuka/1089162061
+  deezer: 12532182
+  amazon: B01CH4A5ZG

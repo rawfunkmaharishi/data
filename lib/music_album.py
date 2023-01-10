@@ -1,6 +1,14 @@
 from lib.entity import Entity
 from lib.raw_funk_maharishi import RawFunkMaharishi
 
+service_lookups = {
+    "amazon": "https://music.amazon.co.uk/embed/",
+    "apple": "https://embed.music.apple.com/us/album/",
+    "youtube": "https://www.youtube.com/embed/videoseries?list=",
+    "spotify": "https://open.spotify.com/embed/album/",
+    "deezer": "https://widget.deezer.com/widget/dark/album/",
+}
+
 
 class MusicAlbum(Entity):
     """A record."""
@@ -31,9 +39,10 @@ class MusicAlbum(Entity):
             map(lambda x: {"@type": "MusicRecording", "name": x}, self.data["tracks"])
         )
 
-        self["sameAs"] = [
-            f"https://www.youtube.com/embed/videoseries?list={self.data['youtube_id']}",
-            f"https://open.spotify.com/embed/album/{self.data['spotify_id']}",
-            f"https://embed.music.apple.com/us/album/{self.data['apple_id']}",
-            f"https://widget.deezer.com/widget/dark/album/{self.data['deezer_id']}",
-        ] + list(map(lambda x: x["url"], self.data["outlets"] or []))
+        self["sameAs"] = list(
+            map(
+                lambda x: f"{service_lookups[x]}{self.data['streaming_ids'][x]}",
+                self.data["streaming_ids"].keys(),
+            )
+        )
+        self["sameAs"].sort()
