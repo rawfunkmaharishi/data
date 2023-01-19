@@ -26,7 +26,8 @@ class TestGig(TestCase):
                 "address": {
                     "@type": "PostalAddress",
                     "addressCountry": "United Kingdom",
-                    "streetAddress": "7 Church Lane, E11 1HG",
+                    "postalCode": "E11 1HG",
+                    "streetAddress": "7 Church Lane",
                 },
                 "geo": {
                     "@type": "GeoCoordinates",
@@ -65,7 +66,8 @@ class TestGig(TestCase):
                 "address": {
                     "@type": "PostalAddress",
                     "addressCountry": "United Kingdom",
-                    "streetAddress": "11 Hoxton Square, N1 6NU",
+                    "postalCode": "N1 6NU",
+                    "streetAddress": "11 Hoxton Square",
                 },
                 "geo": {
                     "@type": "GeoCoordinates",
@@ -106,7 +108,8 @@ class TestGig(TestCase):
                 "address": {
                     "@type": "PostalAddress",
                     "addressCountry": "United Kingdom",
-                    "streetAddress": "11 Hoxton Square, N1 6NU",
+                    "postalCode": "N1 6NU",
+                    "streetAddress": "11 Hoxton Square",
                 },
                 "geo": {
                     "@type": "GeoCoordinates",
@@ -136,7 +139,8 @@ class TestGig(TestCase):
                 "address": {
                     "@type": "PostalAddress",
                     "addressCountry": "United Kingdom",
-                    "streetAddress": "1 Tolpuddle St, N1 0XT",
+                    "postalCode": "N1 0XT",
+                    "streetAddress": "1 Tolpuddle St",
                 },
                 "geo": {
                     "@type": "GeoCoordinates",
@@ -167,7 +171,8 @@ class TestGig(TestCase):
                 "address": {
                     "@type": "PostalAddress",
                     "addressCountry": "United Kingdom",
-                    "streetAddress": "323A New Cross Rd, SE14",
+                    "postalCode": "SE14",
+                    "streetAddress": "323A New Cross Rd",
                 },
                 "geo": {
                     "@type": "GeoCoordinates",
@@ -202,7 +207,8 @@ class TestGig(TestCase):
                 "address": {
                     "@type": "PostalAddress",
                     "addressCountry": "United Kingdom",
-                    "streetAddress": "88 Lower Clapton Rd,, E5 0QR",
+                    "postalCode": "E5 0QR",
+                    "streetAddress": "88 Lower Clapton Rd",
                 },
                 "geo": {
                     "@type": "GeoCoordinates",

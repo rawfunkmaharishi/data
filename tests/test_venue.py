@@ -22,7 +22,8 @@ class TestVenue(TestCase):
             "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "United Kingdom",
-                "streetAddress": "323A New Cross Rd, SE14",
+                "postalCode": "SE14",
+                "streetAddress": "323A New Cross Rd",
             },
             "geo": {
                 "@type": "GeoCoordinates",
@@ -43,7 +44,8 @@ class TestVenue(TestCase):
             "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "United Kingdom",
-                "streetAddress": "7 Church Lane, E11 1HG",
+                "postalCode": "E11 1HG",
+                "streetAddress": "7 Church Lane",
             },
             "geo": {
                 "@type": "GeoCoordinates",
@@ -73,7 +75,8 @@ class TestVenue(TestCase):
                 "address": {
                     "@type": "PostalAddress",
                     "addressCountry": "United Kingdom",
-                    "streetAddress": "88 Lower Clapton Rd,, E5 0QR",
+                    "postalCode": "E5 0QR",
+                    "streetAddress": "88 Lower Clapton Rd",
                 },
                 "geo": {
                     "@type": "GeoCoordinates",

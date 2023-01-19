@@ -10,7 +10,8 @@ class Venue(Entity):
         self["address"] = {
             "@type": "PostalAddress",
             "addressCountry": "United Kingdom",
-            "streetAddress": f"{self.data['address']}, {self.data['postcode']}",
+            "postalCode": self.data["postcode"],
+            "streetAddress": self.data["address"],
         }
         self["geo"] = {
             "@type": "GeoCoordinates",
