@@ -49,7 +49,6 @@ run:
 		--interactive \
 		--tty \
 		--rm \
-		--publish 8000:8000 \
 		${ID} \
 		bash
 
