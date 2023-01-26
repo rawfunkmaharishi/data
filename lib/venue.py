@@ -19,3 +19,10 @@ class Venue(Entity):
             "longitude": self.data["longitude"],
         }
         self["name"] = self.data["name"]
+
+        if "image" in self.data:
+            self["image"] = {
+                "@type": "ImageObject",
+                "contentUrl": f"/venues/{self.data['image']}",
+                "name": self["name"],
+            }

@@ -52,6 +52,11 @@ class TestVenue(TestCase):
                 "latitude": 51.5682837,
                 "longitude": 0.0101648,
             },
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/venues/luna.jpg",
+                "name": "Luna Lounge",
+            },
             "name": "Luna Lounge",
             "url": "https://www.lunalivemusic.com/",
         }
