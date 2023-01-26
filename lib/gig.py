@@ -50,7 +50,8 @@ class Gig(Entity):
                 "description": self["name"],
                 "uploadDate": "-".join(self.id_bits[:3]),
                 "thumbnailUrl": (
-                    f"https://img.youtube.com/vi/{self.data['youtube_id']}/default.jpg"
+                    f"https://img.youtube.com/vi/{self.data['youtube_id']}"
+                    "/maxresdefault.jpg"
                 ),
                 "embedUrl": f"https://www.youtube.com/embed/{self.data['youtube_id']}",
             }

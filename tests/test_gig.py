@@ -47,7 +47,9 @@ class TestGig(TestCase):
                 "name": "Raw Funk Maharishi live at Luna Lounge",
                 "description": "Raw Funk Maharishi live at Luna Lounge",
                 "uploadDate": "2022-12-15",
-                "thumbnailUrl": "https://img.youtube.com/vi/JYP6eA5yqc4/default.jpg",
+                "thumbnailUrl": (
+                    "https://img.youtube.com/vi/JYP6eA5yqc4/maxresdefault.jpg"
+                ),
                 "embedUrl": "https://www.youtube.com/embed/JYP6eA5yqc4",
             },
         }
