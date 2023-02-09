@@ -31,8 +31,8 @@ class TestGig(TestCase):
                 },
                 "geo": {
                     "@type": "GeoCoordinates",
-                    "latitude": 51.5682837,
-                    "longitude": 0.0101648,
+                    "latitude": 51.5681154,
+                    "longitude": 0.0103544,
                 },
                 "image": {
                     "@type": "ImageObject",
