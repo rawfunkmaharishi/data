@@ -88,6 +88,12 @@ class TestVenue(TestCase):
                     "latitude": 51.5531359,
                     "longitude": -0.0529881,
                 },
+                "image": {
+                    "@type": "ImageObject",
+                    "contentUrl": "/venues/biddle-brothers.jpg",
+                    "name": "Biddle Brothers",
+                },
                 "name": "Biddle Brothers",
+                "url": "https://www.facebook.com/biddlebros/",
             },
         )

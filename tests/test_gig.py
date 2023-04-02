@@ -222,7 +222,13 @@ class TestGig(TestCase):
                     "latitude": 51.5531359,
                     "longitude": -0.0529881,
                 },
+                "image": {
+                    "@type": "ImageObject",
+                    "contentUrl": "/venues/biddle-brothers.jpg",
+                    "name": "Biddle Brothers",
+                },
                 "name": "Biddle Brothers",
+                "url": "https://www.facebook.com/biddlebros/",
             },
             "name": "Raw Funk Maharishi live at Biddle Brothers",
             "url": "/gigs/2019/10/24/sad-house-daddy",
