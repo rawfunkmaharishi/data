@@ -21,7 +21,7 @@ class RawFunkMaharishi(Performer):
         self["member"] = list(
             map(
                 load_and_decontext,
-                list(Path("dist/people").glob("*.json")),
+                sorted(list(Path("dist/people").glob("*.json"))),
             )
         )
 
