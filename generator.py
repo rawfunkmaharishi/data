@@ -29,7 +29,7 @@ def make_list(klass, directory, sort_key=None):
 
 def make_gigs():
     """Make the `Gigs` data."""
-    make_list(Gig, "gigs")
+    make_list(Gig, "gigs", "startDate")
 
 
 def make_records():
